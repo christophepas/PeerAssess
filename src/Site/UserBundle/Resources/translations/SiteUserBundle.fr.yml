@@ -1,0 +1,42 @@
+entity:
+    user:
+        firstName: Prenom
+        lastName: Nom
+    type:
+        candidate: candidat
+        supervisor: superviseur
+    customer:
+        company: Entreprise
+
+form:
+    signUp: s'inscrire
+    signIn: se connecter
+    registration:
+        submit: Demander un accès
+    edit:
+        submit: Confirmer les modifications
+    alreadyRegistered: Déjà inscrit ?
+    notAlreadyRegistered: Pas encore de compte ?
+    email: Adresse email
+    password: Mot de passe
+    password_confirmation: Vérification de mot de passe
+    github: Se connecter avec github (développeurs)
+    youAre: vous êtes
+
+"Bad credentials": "Pseudo ou mot de passe incorect"
+
+security:
+    cancel: annuler
+    login:
+        username: "Email :"
+    password:
+        change: Changer le mot de passe
+
+resetting:
+    forgot: mot de passe oublié ?
+    request:
+        invalid_username: L'adresse e-mail "%username%" n'existe pas.
+        username: "Adresse e-mail :"
+    email:
+        subject: Réinitialisation de votre mot de passe
+        message: Bonjour %username%, <br>Pour réinitialiser votre mot de passe, merci de vous rendre à <a href="%confirmationUrl%">cette adresse</a>.

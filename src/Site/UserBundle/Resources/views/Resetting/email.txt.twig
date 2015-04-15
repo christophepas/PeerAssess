@@ -1,0 +1,15 @@
+{% extends '::layout_mail.html.twig' %}
+
+{% trans_default_domain 'SiteUserBundle' %}
+
+{% block subject %}
+{% autoescape false %}
+{{ 'resetting.email.subject'|trans({'%username%': user, '%confirmationUrl%': confirmationUrl}) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block message %}
+{% autoescape false %}
+{{ 'resetting.email.message'|trans({'%username%': user, '%confirmationUrl%': confirmationUrl}) }}
+{% endautoescape %}
+{% endblock %}

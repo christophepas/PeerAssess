@@ -1,0 +1,53 @@
+security:
+    providers:
+        in_memory:
+            memory: ~
+        main:
+            id: fos_user.user_provider.username
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                check_path: fos_user_security_check
+                login_path: fos_user_security_login
+                provider: fos_userbundle
+                require_previous_session: false
+                # success_handler: login_handler
+                use_referer: true
+            remember_me:
+                key:         %secret%
+            logout:
+                path: fos_user_security_logout
+            anonymous: ~
+            switch_user: true
+            oauth:
+                resource_owners:
+                    github:          "/login/check-github"
+                login_path:        /login
+                use_forward:       false
+                failure_path:      /login
+                oauth_user_provider:
+                    service: site.oauth.user_provider
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_CANDIDATE:       ROLE_USER
+        ROLE_SUPERVISOR:	ROLE_USER
+        ROLE_ADMIN:	[ROLE_CANDIDATE, ROLE_SUPERVISOR]
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/dashboard, role: ROLE_SUPERVISOR }
+        - { path: ^/candidate/dashboard, role: ROLE_CANDIDATE }
+        # catch all just so we can check roles in controllers
+        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }

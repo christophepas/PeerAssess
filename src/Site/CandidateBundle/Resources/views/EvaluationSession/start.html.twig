@@ -1,0 +1,164 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+{% block body %}
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content aligner" id ="evaluationSessionStart">
+  <div class="container-image inactive">
+    <img class="img2" src="{{ optipng('img/testStart/instructions.png') }}">
+    <img class="img3" src="{{ optipng('img/testStart/work.png') }}">
+    <img class="img4" src="{{ optipng('img/testStart/corrections.png') }}">
+  </div>
+  {# NE RIEN RAJOUTER ENTRE L'IMAGE ET LE WRAPPER (CSS) #}
+  <table id="myCarousel" class="wrapper">
+    <!-- Controls -->
+    <tr>
+      <td>
+        <h1>&nbsp;</h1>{# Permet de centrer les flèches de navigation #}
+        <a class="left control" href="#myCarousel" data-slide="prev" style="display:none;">
+          <span class="icon icon-arrow-left9 "></span>
+        </a>
+      </td>
+      <td>
+        <div class="slide-wrapper">
+         <div class="item active" id="slide1">
+            <div class="slide-container">
+                <h1>{{ 'start.slide1.title'|trans }}</h1>
+                <p>{{ 'start.slide1.content'|trans|raw }}</p>
+            </div>
+          </div>
+          <div class="item"  id="slide2">
+            <div class="slide-container">
+                <div class=" ">
+                  <h1>{{ 'start.slide2.title'|trans }}</h1>
+                  <p>{{ 'start.slide2.content'|trans|raw }}</p>
+                </div>
+            </div>
+          </div>
+          <div class="item"  id="slide3">
+            <div class="slide-container">
+                <div>
+                  <h1>{{ 'start.slide3.title'|trans }}</h1>
+                  <p>{{ 'start.slide3.content'|trans|raw }}</p>
+                </div>
+            </div>
+          </div>
+          <div class="item"  id="slide4">
+            <div class="slide-container">
+                <div>
+                  <h1>{{ 'start.slide4.title'|trans }}</h1>
+                  <p>{{ 'start.slide4.content'|trans|raw }}</p>
+                </div>
+            </div>
+          </div>
+          <div class="item"  id="slide5">
+            <div class="slide-container">
+                <h1><span class="icon icon-bullhorn"></span> {{ 'start.slide5.title'|trans }}</h1>
+                <p>
+                  {{ 'start.slide5.content'|trans|raw }}
+                </p>
+                <p>
+                	{{ 'start.time1'|trans }}
+                	<b class="secondsToTime">{{ evaluationSession.evaluation.test.duration }}</b>
+                	{{ 'start.time2'|trans }}
+                </p>
+                  {{ form_start(form,{'attr':{'id':'launchtest'}}) }}
+                  {{ form_row(form.start) }}
+                {{ form_end(form) }}
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <h1>&nbsp;</h1>
+        <a class="right control" href="#myCarousel" data-slide="next">
+          <span class="icon-arrow-right9 icon"></span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+{% endblock body %}
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+  //active les fonctionnalités de base du carousel
+  $('#myCarousel').carousel({
+    pause: true,
+    interval: false
+  });
+
+  //L'event a la propriété direction seulement pour slide, pas pour slid
+  var slide = 1;
+  $('#myCarousel').on('slide.bs.carousel', function(event) {
+    //MAJ de la slide active
+    var direction = event.direction;
+    if (direction == "left"){
+      slide++;
+    }
+    if (direction == "right"){
+      slide--;
+    }
+    console.log(slide);
+    //
+    if(slide == 1){
+      console.log("slide1");
+      $('.left.control').hide();
+      $('.container-image').removeClass('active').addClass('inactive');
+      return
+    }
+    if(slide == 5){
+      $('.right.control').hide();
+      $('.container-image').removeClass('active').addClass('inactive');
+      return
+    }
+    else{
+      $('.control').show();
+      $('.container-image').removeClass('inactive').addClass('active');
+      if(slide==2){
+        $('.container-image').removeClass('slide2 slide3 slide4 slide5').addClass('slide2');
+      }
+      if(slide==3){
+        $('.container-image').removeClass('slide2 slide3 slide4 slide5').addClass('slide3');
+      }
+      if(slide==4){
+        $('.container-image').removeClass('slide2 slide3 slide4 slide5').addClass('slide4');
+      }
+      return
+    }
+  });
+
+	$(document).keydown(function(e) {
+	    switch(e.which) {
+	        case 39:
+	            if($('.slide-wrapper .item:last-child').hasClass('active')) {
+	              break;
+	            }
+	            $('#myCarousel').carousel('next');
+	            break;
+	        case 37:
+	            if($('.slide-wrapper .item:first-child').hasClass('active')) {
+	              break;
+	            }
+	            $('#myCarousel').carousel('prev');
+	            break;
+	        default: return; // exit this handler for other keys
+	    }
+	});
+
+  $(document).ready(function()
+      {
+				var totalSec = $(".secondsToTime").html();
+				var hours = parseInt( totalSec / 3600 ) % 24;
+				var minutes = parseInt( totalSec / 60 ) % 60;
+				var seconds = totalSec % 60;
+
+				var result = (hours < 10 ? "0" + hours : hours) + " {{ 'common.hoursAnd'|trans }} " + (minutes < 10 ? "0" + minutes : minutes) + " {{ 'common.minutes'|trans }}";
+         $(".secondsToTime").html(result);
+      }
+  );
+
+</script>
+{% endblock javascript %}
+

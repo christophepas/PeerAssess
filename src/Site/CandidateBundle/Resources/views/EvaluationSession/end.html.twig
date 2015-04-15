@@ -1,0 +1,13 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+
+{% block  id_content %}end{% endblock %}
+
+{% block content %}
+<div class="card-pad">
+	<div class="message">
+		<h1>{{ 'end.title'|trans }}</h1>
+		<p>{{ 'end.content'|trans }}</p>
+	</div>
+</div>
+{% endblock content %}

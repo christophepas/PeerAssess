@@ -1,0 +1,53 @@
+{% extends 'SiteVitrineBundle::layout.html.twig' %}
+
+{% block link_btn_connexion %}#{% endblock %}
+
+{% block content %}
+	{% include "SiteVitrineBundle:Utils:navbar.html.twig" %}
+	<div class="content" id="vitrine">
+		{% include 'SiteVitrineBundle:Core:sections/section_company_home.html.twig' %}
+		{% include 'SiteVitrineBundle:Core:sections/section_company_peerAssessement.html.twig' %}
+		{% include 'SiteVitrineBundle:Core:sections/section_company_presentation.html.twig' %}
+		{% include 'SiteVitrineBundle:Core:sections/section_company_features.html.twig' %}
+		{% include 'SiteVitrineBundle:Core:sections/section_company_end.html.twig' %}
+	</div>
+{% endblock  content%}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+	$( document ).ready(function() {
+		$animateIn = $(".animate");
+		var animateInOffset = 100;
+		$(window).scroll(function(e) {
+			var windowHeight = $(window).height(),
+			windowScrollPosition = $(window).scrollTop(),
+			bottomScrollPosition = windowHeight + windowScrollPosition;
+			$animateIn.each(function(i, element) {
+				if ($(element).offset().top + animateInOffset < bottomScrollPosition) {
+					$(element).removeClass('pre-animate-left pre-animate-right pre-animate-up');
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+  //hide bg if form is shown
+
+
+  //variable globale déterminant si une des box de connexion/inscription/reset est apparente. (utile pour l'affichage ou non du background)
+  var toogleForm=false;
+
+  function toogleBg() {
+      if ($(window).width() < 992 && toogleForm == true ) {
+         $('.background').css("background","none");
+         $(".fadeElt").toogleClass("pull-left");
+      }
+      else{
+         $('.background').css("background","");
+      }
+  }
+  $(window).on('resize',toogleBg);
+
+  </script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% block collection_widget %}
+{% spaceless %}
+    <div class="collection" data-count="{{ form|length }}" data-prototype-name="{{ form.vars.prototype.vars.name }}">
+        {% if prototype is defined %}
+          {% set attr = attr|merge({'data-prototype': block('collection_item_widget') }) %}
+        {% endif %}
+        <div {{ block('widget_container_attributes') }}>
+			<div class="collection-sub-items">
+				{% for rows in form %}
+					{{ block('collection_item_widget', {'prototype': rows}) }}
+				{% endfor %}
+				{{ form_rest(form) }}
+			</div>
+        </div>
+        <div class="clear"></div>
+        <button class="collection-item-add btn btn-primary" title="Add">
+			<span class="icon">
+				Add
+			</span>
+        </button>
+		<div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_widget %}
+{% spaceless %}
+	<div class="collection-item">
+    {% for row in prototype %}
+      <div>
+        {{ form_label(row) }}
+        {{ form_widget(row) }}
+      </div>
+    {% endfor %}
+    <button class="collection-item-remove btn btn-danger" title="Remove">
+			<span class="icon icon-minus4"></span>
+    </button>
+		<div class="clear"></div>
+	</div>
+{% endspaceless %}
+{% endblock collection_item_widget %}

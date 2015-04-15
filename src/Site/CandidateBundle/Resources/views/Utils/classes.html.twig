@@ -1,0 +1,18 @@
+<table class="table-style">
+    <tr class="line1">
+      <th class="col1">Type</th>
+      <th class="col2">Nom</th>
+      <th class="col1">Héritage</th>
+      <th class="col2">Implémentation</th>
+    </tr>
+    {% for testSkeleton in testSkeletons %}
+    {% for testClass in testSkeleton.testClasses %}
+    <tr>
+      <td>{% if testClass.isInterface %}Interface{% else %}Classe{% endif %}</td>
+      <td>{{ testClass.name }}</td> 
+      <td>{{ testClass.superClass }}</td>
+      <td>{% for interface in testClass.interfaces %}{{ interface.name }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+      </tr>            
+    {% endfor %}     
+    {% endfor %}
+</table>

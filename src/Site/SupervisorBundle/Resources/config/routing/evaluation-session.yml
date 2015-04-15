@@ -1,0 +1,23 @@
+site_supervisor_evaluation-session_add-single:
+    pattern:  /{id}/add-invite
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:addSingle" }
+
+site_supervisor_evaluation-session_add-multiple:
+    pattern:  /add-invite
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:addMultiple" }
+
+site_supervisor_evaluation-session_list:
+    pattern:  /list/{status}
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:list", status: "all" }
+
+site_supervisor_evaluation-session_show:
+    pattern:  /{id}
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:show" }
+
+site_supervisor_test-session_file:
+    pattern:  /{id}/file
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:file" }
+
+site_supervisor_evaluation-session_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SiteSupervisorBundle:EvaluationSession:delete" }

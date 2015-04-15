@@ -1,0 +1,145 @@
+{% extends 'SiteVitrineBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteVitrineBundle' %}
+
+{% block content %}
+{% include "SiteVitrineBundle:Utils:navbar.html.twig" %}
+<div class="content" id="vitrine">
+  <section   class="section-header section-border waypoint " data-animate-down="header-show" data-animate-up="header-hide">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>FAQ</h1>
+        <h3 class=" col-centered col-xs-10 col-md-8">
+        	{{ 'faq.text.part1'|trans }}
+        	<a href="{{ path("site_vitrine_core_contact") }}">{{ 'faq.text.part2'|trans }}</a>.
+        </h3>
+      </div>
+    </div>
+  </section>
+  <section class="section-main">
+
+		<div class="panel-group" id="accordion">
+
+		  <div class="panel panel-1 container-fluid">
+		    <div class="panel-heading">
+                  <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" class="accordion-toggle collapsed">
+                      	{{ 'faq.question1'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer1'|trans }}
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-2 container-fluid" >
+		    <div class="panel-heading">
+                 <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" class="accordion-toggle collapsed">
+                      	{{ 'faq.question2'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+		    </div>
+		    <div id="collapseTwo" class="panel-collapse collapse ">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer2'|trans }}
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-1 container-fluid">
+		    <div class="panel-heading">
+                 <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" class="accordion-toggle collapsed">
+                      	{{ 'faq.question3'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer3.part1'|trans }}
+		    			 <a href="{{ path("site_vitrine_core_contact") }}">
+		    			 	{{ 'faq.answer3.part2'|trans }}
+		    			</a>
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-2 container-fluid">
+                <div class="panel-heading">
+                 <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" class="accordion-toggle collapsed">
+                      	{{ 'faq.question4'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+                </div>
+		    <div id="collapseFour" class="panel-collapse collapse">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer4.part1'|trans }}
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-1 container-fluid">
+		    <div class="panel-heading">
+                 <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive" class="accordion-toggle collapsed">
+                      	{{ 'faq.question5'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+		    </div>
+		    <div id="collapseFive" class="panel-collapse collapse">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer5'|trans }}
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-2 container-fluid">
+		    <div class="panel-heading">
+                 <div class="row">
+                    <h4 class="panel-title col-centered col-xs-10 col-md-8">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseSeven" class="accordion-toggle collapsed">
+                      	{{ 'faq.question7'|trans }}
+                      </a>
+                    </h4>
+                  </div>
+		    </div>
+		    <div id="collapseSeven" class="panel-collapse collapse">
+		    	<div class="row">
+		    		<div class="panel-body col-centered col-xs-10 col-md-8">
+		    			{{ 'faq.answer7'|trans }}
+
+		    		</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		</div>
+
+  </section>
+</div>
+
+ {% endblock %}

@@ -1,0 +1,39 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% block page_title %}
+	{{'pageTitle.subjectEdit'|trans}}
+{% endblock %}
+
+{% block id_content %}testCreate{% endblock %}
+
+{% block content %}
+{{form_start(form)}}
+	<div class="card-pad m-t markdown">
+		<div class="name">
+			{{form_widget(form.children.name,{'attr': {'placeholder':'test.create.name'|trans,'autofocus':true}})}}
+		</div>
+		<div class="shortDescription">
+			{{form_widget(form.children.shortDescription,{'attr': {'placeholder':'test.create.shortDescription'|trans}})}}
+		</div>
+		<div>
+			<span class="">
+				{{form_widget(form.children.language)}}
+			</span>
+			<span class="">
+				{{form_widget(form.children.duration)}}
+			</span>
+		</div>
+	</div>
+	<div class="card-pad m-t markdown">
+		<div class="readMe">
+			{{form_widget(form.children.readMe,{'attr': {'placeholder':'test.create.readMe'|trans}})}}
+			{{form_widget(form.children.baseFile,{'attr':{'required':'false'}})}}
+		</div>
+	</div>
+	<div class=" m-t full-width text-center">
+		{{form_widget(form.children.save,{'attr':{'class':'btn btn-main-s'}})}}
+	</div>
+	{{form_rest(form)}}
+{{form_end(form)}}
+{% endblock %}

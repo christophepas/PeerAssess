@@ -1,0 +1,48 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block page_title %}{{ 'pageTitle.dashboard'|trans }}{% endblock %}
+
+{% block id_content %}dashboard{% endblock %}
+
+{% block content %}
+	<div class="card padder padder-v">
+		<h1 class="c-primary">
+			{{ 'preLaunch.title'|trans }}
+		</h1>
+		<p>
+			{{ 'preLaunch.content'|trans|raw }}
+			<a href="mailto:company@peerassess.co">
+				{{ 'preLaunch.contact'|trans }}
+			</a>
+		</p>
+	</div>
+
+	{% if finishedSessions is not empty %}
+		{% set invites = [] %}
+		{% for session in finishedSessions %}
+			{% set invites =  invites|merge([session.invite]) %}
+		{% endfor %}
+		<h4 class="primary insist m-t-lg">
+			{{ 'dashboard.finishedSessions'|trans }}
+		</h4>
+		<table  class=" tablesorter table-dashboard">
+			{% include 'SiteSupervisorBundle:EvaluationSession:table.html.twig' with {'invites': invites} %}
+		</table>
+	{% endif %}
+
+	{% if unclaimedInvites is not empty %}
+		{% set invites = [] %}
+		{% for invite in unclaimedInvites %}
+			{% set invites =  invites|merge([invite]) %}
+		{% endfor %}
+		<h4 class="primary insist m-t-lg">
+			{{ 'dashboard.unclaimedInvites'|trans }}
+		</h4>
+		<table  class=" tablesorter table-dashboard">
+			{% include 'SiteSupervisorBundle:EvaluationSession:table.html.twig' with {'invites': invites} %}
+		</table>
+	{% endif %}
+
+{% endblock content %}

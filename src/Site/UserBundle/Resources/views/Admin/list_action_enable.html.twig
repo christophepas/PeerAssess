@@ -1,0 +1,8 @@
+<a 
+  class="btn btn-sm" 
+  {% if object.confirmed %} 
+    disabled="disabled"
+  {% else %}
+    href="{{ admin.generateObjectUrl('enable', object) }}"
+  {% endif %}>
+    Enable</a>

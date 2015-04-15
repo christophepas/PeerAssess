@@ -1,0 +1,19 @@
+{% extends '::layout_mail.html.twig' %}
+
+{% trans_default_domain 'SiteCandidateBundle' %}
+
+{% block contenu_mail %}
+{{ 'mail.invite.hello'|trans }}
+<br><br>
+{{ 'mail.invite.title'|trans }}
+<br><br>
+{{ 'mail.invite.testDate'|trans }} : {{ invite.scheduledDate|date('d/m/Y H:i') }}</li>
+{% endblock contenu_mail %}
+
+{% block lien_bouton_mail %}
+{{ url('site_user_evaluation_invite_retrieve', {'token': invite.token}) }}
+{% endblock lien_bouton_mail %}
+
+{% block texte_bouton_mail %}
+	{{ 'mail.invite.btn'|trans }}
+{% endblock texte_bouton_mail %}

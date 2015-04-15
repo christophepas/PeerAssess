@@ -1,0 +1,28 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% block page_title %}{% endblock %}
+
+{% block id_content %}{% endblock %}
+
+{% block content %}
+	<div class="card-pad m-t markdown">
+		<div class="h2 c-primary insist">
+			{{test.name}}
+		</div>
+		<div class="shortDescription">
+			{{test.shortDescription}}
+		</div>
+		<div>
+			<table><tbody>
+				<tr><td>Language</td><td>{{test.language|language}}</td></tr>
+				<tr><td>Duration</td><td>{{test.duration}}</td></tr>
+			</tbody></table>
+		</div>
+	</div>
+	<div class="card-pad m-t markdown">
+		<div class="readMe">
+			{{test.readMe|markdown}}
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,7 @@
+site_supervisor_ajax_requirement:
+    path:      /requirement
+    defaults:  { _controller: "SiteSupervisorBundle:Ajax:requirement" }
+    
+site_supervisor_ajax_language:
+    path:      /language
+    defaults:  { _controller: "SiteSupervisorBundle:Ajax:language" }

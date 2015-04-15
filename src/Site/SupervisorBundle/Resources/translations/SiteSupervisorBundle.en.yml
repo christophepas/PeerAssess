@@ -1,0 +1,253 @@
+common:
+    logout: Log out
+    dashboard: Dashboard
+    candidate: candidate
+    candidates: candidates
+    test: Test
+    tests: Tests
+    subjects: Test subjects
+    settings: Settings
+    guide: Guide
+    name: Last name
+    firstName: First name
+    company: Company
+    image: Picture
+    mail: Mail
+    save: Save
+    cancel: Cancel
+    delete: Delete
+    newCandidate: New candidate
+    newTest: New test
+    feedback: Feedback
+    language: Language
+    languages: Languages
+    date: Date
+    hour: Hour
+    add: Add
+    remove: Remove
+    average: Average
+    skill: Skill
+    level: Level
+    score: Score
+    status: Status
+    result: Result
+    speed: Speed
+    recent: Recent
+    onHold: On hold
+    running: Ongoing
+    edit: Edit
+    by: by
+footer:
+    copyrights: ALL RIGHTS RESERVED
+    support: support
+pageTitle:
+    dashboard: Dashboard
+    showClosed: Test result
+    showStarted: Test running
+    settings: Settings
+    testShow: Test
+    testList: Your tests
+    testAdd: New test
+    sessionList: All your candidates
+    subjectAdd: Create a test subject
+    subjectList: your test subjects
+dashboard:
+    finishedSessions: Last ended sessions
+    unclaimedInvites: These tests haven't been taken on time
+profile:
+    mailTitle: Mail settings
+    descriptionNewsletter: By subscribing to our newsletter, you are kept up to date of our progress and Peerassess's growth.
+    descriptionAlphaletter: This newsletter reserved for alpha users allows you to be kept up to date of our progress.
+    changePassword: Change the password
+test:
+    new: create a new test subject
+    create:
+        name: Title of your test
+        shortDescription: Description of the test (~140 characters)
+        readMe: Instructions for the work. Example:
+    createScheme:
+        title: Title for the correction
+        introduction: Further explanations on how to correct...
+        sectionDetails: Each section groups several grades related to a similar aspect of the test. Each grade has 3 levels : bad, ok and good.
+        gradetitle: Section title
+        gradeintroduction: Details on this section...
+        gradename: Name of the grade
+        addSection: Add a section
+        addGrade: Add a grade
+        removeSection: Remove the section
+        removeGrade: Remove the grade
+evaluation:
+    add:
+        language:
+            title: On what technologie would you like to test your candidates ?
+        test:
+            title: Choose a model of test
+        name:
+            title: Name your test
+        generate: Generate your test
+        fastCreation: Quick creation
+        advancedCreation: Custom creation
+        levels: Levels
+        problems: Problems
+        problemName: Problem name
+        level: Level
+        duration: Duration
+        totalDuration: Total duration
+        quick:
+            know-how: Know-how
+        success: The test has been created
+    delete:
+        title: Test removal
+        content: You're about to remove the test
+        content2: together with all the sessions that have been taken on it.
+        submit: Confirm removal
+    list:
+        waitingScore: -
+    show:
+        average: Average score
+evaluationSession:
+    add:
+        placeholder:
+            emails: Type here candidates' emails...
+            email: Email
+        invite: invite
+        noEvaluation: Please create a test in order to invite an candidate
+        errorName: Name required
+        errorFirstName: First name required
+        errorMail: Invalid email address
+        errorSendMail: Please fill in a email address in order to send an invite
+        send: Send invitations
+        success: The candidate has been added
+        successes: The candidates have been added
+        warning: It is recommended to invite 4 candidates or more to have results.
+    delete:
+        title: Session removal
+        content: You're about to cancel this session
+        submit: Confirm removal
+        success: The session of %email% has well been canceled.
+    archive:
+        title: Session archiving
+        content: You're about to archive this session
+        submit: Confirm
+        success: The session of %email% has well been archived.
+    list:
+        title: Your candidates
+    showClosed:
+        details: Details
+        file: Download the result
+    showStarted:
+        content: The candidate can access the test via this link
+    table:
+        noCandidate: No candidates
+    running:
+        instructions: Instructions
+        classes: Awaited classes
+        signatures: Function signatures
+        problemScore: Score on the exercice
+        candidateCode: candidate's code
+    only1Test: the candidate hasn't taken any other test
+    status:
+        notAccepted: Waiting for the candidate
+        created: Ready to be started
+        running: Work in progress
+        waitingToCorrect: Waiting to correct
+        correcting: Correcting others
+guide:
+    general:
+        title: Welcome on Peerassess
+        content:  This tool has been built to help you in your interviews by allowing you to easily assess your candidates' coding skills, without knowing anything about coding.
+        content2: The whole interface is designed to let you easily create tests, invite candidates to take them, and see their results.
+        content3: The navigation is eased by the sidebar allowing you to access the main features. You can reduce it at anytime.
+    dashboard:
+        title: Dashboard
+        content: This view gives you access to the results of the last assessed candidates, as well as the next tests that will be taken or the ones being taken.
+        button: Go to the dashboard
+    tests:
+        title: Your tests
+        content: You will find in this tab all the test subjects that you have created. Each test subject consist in a set of exercices that the candidates will take and be assessed. A test can be used for as many candidates as you will, in order to easily compare their results.
+        content2: Each test has a its own page, giving you access to various pieces of information.
+        list:
+            li: The average socre of the test
+            li2: The candidates having taken the test
+            li3: The score of each candidate
+            li4: The possibility to invite candidates to take this test
+    candidates:
+        title:  candidates view
+        content: This interface shows you all your candidates, you can easily sort them by test, score and date.
+    newTest:
+        title: Create a test
+        content: This interface has been conveived to create tests subjects without requiring any technical knowledge. It comes in two variants :  a quick creation mode and an advanced creation mode.
+        content2: The quick creation mode let you choose a language, the level of experience that have to be assessed and the time available to finish the test. Once nammed, Peerassess will automatically create a test matchng with these parameters.
+        content3: The advanced creation mode lets you select precisely which exercices the candidates will be taking. It allows you to browse the test library by language and level, and to select the exercices you want.
+        button: Create a test
+    newCandidate:
+        title: Add an candidate
+        content: You can at the same time invite several candidates, for one or several tests. The form lets you fill the name and the mail of the candidate, to choose the test he will be taking and eventually to define the date of the session.
+        content2: Each candidate can be either invited by mail if you allow him to take his test from a distance.
+        button: New candidate
+    feedback:
+        title: Feedback
+        content: A feedback tab is available at anytime; Peerassess evolves permanently and we need your feedback to go on.
+        content2: Thanks for all your comment. They allow us to candidateelop the perfect product to fulfill your needs.
+company:
+    title: Change of subscription
+    noImage: No picture
+    plan: plan
+    credits: Remaining tests
+    dateNextPlan: Next billing date
+    nextPlan: Next plan
+    cancelPlan: Unsubscribe
+    changePlan: Change your subscription
+    changePicture: Changer the picture
+    subscriptions: Plans
+    subscriptionsLink: Change your subscription
+subscribe:
+    changePlan: Change or unsubscribe at anytime
+    perMonth: / month
+    eco: Standard
+    business: Business
+    first: First
+    candidates: test sessions
+    user: user
+    users: users
+    prix:
+        eco: 99
+        business: 299
+        first: Contact us
+    nbTests:
+        eco: 5
+        business: 20
+        first: Custom
+    exercices:
+        eco: Full exercices library
+        business: Full exercices library
+        first: Full and custom exercices library
+    languages:
+        eco: More than 3 languages
+        business: More than 3 languages
+        first: More than 3 languages
+    engagement:
+        eco: Unsubscribe at anytime
+        business: Unsubscribe at anytime
+        first: Custom
+    subscribe:
+        trial: Start your free trial
+        contact: Contact us
+        currentPlan: Current subscription
+    cancel:
+        title: Subscription cancellation
+        btn: Subscription cancellation
+        content: Careful, your subscription will be directly canceled and you won't be able to use tests any longer.
+    widget:
+        label: subscribe
+        standard:
+            subscriptionName: Standard plan
+            panelLabel: Subscribe to the standard plan
+        business:
+            subscriptionName: Business plan
+            panelLabel: Subscribe to the business plan
+
+preLaunch:
+    title: Welcome on Peerassess
+    content: Thank you for subscribing to our service. What you see is a first version of the tool; it is currently under candidateelopment, and we will keep you informed of our evolutions and when it will officially launch. <br>If you have needs right now, we can still help you, feel free to
+    contact: contact us.

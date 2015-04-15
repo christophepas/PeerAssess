@@ -1,0 +1,63 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+      <div class="col-xs-12 col-sm-6 instructions">
+        <h2>{{ 'evaluationSession.running.instructions'|trans }}</h2>
+        <p>{{ testSession.test.instruction }}</p>
+        <h4>{{ 'evaluationSession.running.classes'|trans }}</h4>
+        {% include "SiteCandidateBundle:Utils:classes.html.twig" with {'testSkeletons': testSession.test.testSkeletons} %}
+          
+        <h4>{{ 'evaluationSession.running.signatures'|trans }}</h4>
+        {% include "SiteCandidateBundle:Utils:methods.html.twig" with {'testSkeletons': testSession.test.testSkeletons} %}    
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="score">
+          <h2>{{ 'evaluationSession.running.problemScore'|trans }}</h2>
+          <table class="table-score">
+            <tr>
+              <td class="titre">{{ 'common.result'|trans }}</td>
+              <td class="score">
+                <div class="progress progress-global-small">
+                  {% set value =  100 * testSession.resultScore %}
+                  {% include 'SiteSupervisorBundle:EvaluationSession:progress_bar.html.twig' with {'value':value} %}
+                  </div>
+              </td>
+            </tr>                        
+
+            <tr>
+              <td class="titre">{{ 'common.speed'|trans }}</td>
+              <td class="score">
+                <div class="progress progress-global-small">
+                  {% set value = 100 * testSession.timeScore %}
+                  {% include 'SiteSupervisorBundle:EvaluationSession:progress_bar.html.twig' with {'value':value} %}
+                  </div>
+              </td>
+            </tr>                     
+
+            {# <tr>
+              <td class="titre">{{ 'common.quality'|trans }}</td>
+              <td class="score">
+                <div class="progress progress-global-small">
+                  {% set value = 100 * testSession.qualityScore %}
+                  {% include 'SiteSupervisorBundle:EvaluationSession:progress_bar.html.twig' with {'value':value} %}
+                  </div>
+              </td>
+            </tr>    #}                       
+          </table>   
+        </div>
+        <div class="code">
+          <h2>{{ 'evaluationSession.running.candidateCode'|trans }}</h2>
+          <ul class="nav nav-tabs" id="nav-ide">
+            {% for testResponse in testSession.testResponses %}
+              <li {% if loop.first %}class="active"{% endif %}><a href="#testTab_{{ testResponse.id }}" target-id="{{ testResponse.id }}" data-toggle="tab">{{ testResponse.testSkeleton.filename }}</a></li>
+            {% endfor %}
+          </ul>                
+          <div id="ide" class="tab-content">
+            {% for testResponse in testSession.testResponses %}
+              <div class="tab-pane{% if loop.first %} active{% endif %}" id="testTab_{{ testResponse.id }}">  
+              {{ render(controller('SiteCandidateBundle:EvaluationSession:testResponse',{'id':testResponse.id})) }}
+              </div>
+            {% endfor %}
+          </div>    
+        </div>
+         
+      </div>

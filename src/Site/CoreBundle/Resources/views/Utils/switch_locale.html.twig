@@ -1,0 +1,9 @@
+{% trans_default_domain 'SiteCoreBundle' %}
+
+{% set to_locale = "en" %}
+{% if app.request.locale == "en" %}
+  {% set to_locale = "fr" %}
+{% endif %}
+{% set params = app.request.attributes.get('_route_params')|merge({'_locale': to_locale}) %}
+<a href="{{ path(app.request.attributes.get('_route'), params) }}">{{ 'switchLanguage'|trans }}</a>
+                

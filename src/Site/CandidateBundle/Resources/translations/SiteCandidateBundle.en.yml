@@ -1,0 +1,101 @@
+common:
+    logout: logout
+    hoursAnd: hours and
+    minutes: minutes
+    support: Support
+    correction: correction
+    save: save
+    cancel: cancel
+    goOn: go on
+
+invite:
+    claimed: You have successfully claimed this invite.
+    success: Vous avez bien été inscrit(e).
+    removed: The supervisor has removed the invitation.
+
+welcome:
+    title: Welcome on Peerassess
+    content: Thank you for suscribing to our service. While it's still under development, we will keep you informed of our progress and come back to you very soon.
+
+start:
+    time1: You will be in limited time to complete this test; once you click the launch button, you will have
+    time2: to finish it. Good luck !
+    slide1:
+        title: Welcome
+        content: You are going to be tested on your coding skills <span class="insist">in real conditions</span>. Rather than testing your theoretical knowledge only, Peerassess offers your to work on a <span class="insist">project in your usual working conditions</span>.<br>Here are a few presentation elements, so that you can get to know the system.
+    slide2:
+        title: Instructions
+        content: Starting the exercice, you will access :<ul class="text-left"><li>a documentation describing the project and what you're supposed to bring to it.</li><li>A .zip file with the initial project</li><li>A few rules on the technologies to use</li><li>some good practices to respect</li></ul>
+    slide3:
+        title: Work
+        content: You are going to work on your machine, with access to your usual ressources. <br>To end the exercice you will have to submit your result in a .zip file <span class="insist">within the time limit</span>.
+    slide4:
+        title: Assessments
+        content: The second part of your work will be to assess other candidates' work on the same exercice, with a very precise marking scheme and then to give feedbacks on it. <br><br><span class="insist">WARNING</span>, this part of the exercice shows your ability to read, understand and improve your peers' code, and <span class="insist">the mark you give will impact your own grade</span>.
+    slide5:
+        title: Feedback
+        content: We need your feedbacks; this tool will be used by many candidates, and we intend to combine the perfect conditions to let you show what you're worth. May the force be with you !
+    btn: Start the test
+
+test:
+    remainingTime: remaining time
+    over: the test is over
+    startLink: Start file
+    end:
+        text: Once your test over, upload your result in a .zip file.
+        btn: End the test
+    modal:
+        title: Warning
+        text: Warning, after this you won't be able to modify your code.
+    lateSubmission: You submitted the result file too late. The result was not taken.
+    lateCorrection: You took too long to correct others. The correction time is over.
+end:
+    title: Test over !
+    content: Thank you for taking the test, your session is over and the results will be available soon.
+
+correction:
+    title: Corrections
+    content1: You have been assigned the following corrections. Be as thourough as possible : this is your opportunity to show that you are able to read code and give constructive criticism (code is read more often than it is written). Point out good points and bad points.
+    warning: Warning : your final score will be impacted by this step. Rate as accurately as you can.
+    grade:
+        explain: explain the grade you give
+        bad: Bad
+        ok: Ok
+        good: Good
+    comment:
+        title: Express yourself
+        text: Is this work better or worst than yours ? How could have it been improved and what would you have liked to use from it during your work ?
+    ddlFile: download the result
+    await:
+        title: Waiting for corrections
+        text: We are looking for works for you to grade. You will receive an email when there are enough.
+    late: Your correction time is over.
+    progress: Progress : Correction
+    launch: next correction
+    send: Save (final)
+
+mail:
+    end:
+        title1: The test of
+        title2: is over
+        content1: Hello,
+        content2: The work of
+        content3: on the test
+        content4: just finished; his global score is of
+        content5: for an average score on this test of
+        btn: Details
+    correctionReady:
+        title: You can assess other candidates
+        content1: Hello,
+        content2: You recently took a test on Peerassess. Now comes the peer-correcting: Vient maintenant le peer-correcting : you will grade others' work and give them feedbacks.<br>You have until:
+        content3: Other candidates are giving feedback on your work so that you can improve yourself.
+        btn: Go peer-correct
+    invite:
+        title: You are invited to take a coding assessment.
+        hello: Hello,
+        testDate: You will be able to start the test from the
+        btn: Start the test
+    late_start:
+        title: Your candidate "%email%" didn't start the test on time
+        greet: Hello,
+        content: Your candidate "%email%" didn't start the test on time.

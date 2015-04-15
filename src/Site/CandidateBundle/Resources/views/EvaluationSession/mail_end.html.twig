@@ -1,0 +1,19 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+{% extends '::layout_mail.html.twig' %}
+
+{% set global =  evaluationSession.globalScore * 100 %}
+{% set moyenne =  evaluationSession.evaluation.average * 100 %}
+
+{% block contenu_mail %}
+	{{'mail.end.content1'|trans}}
+	<br><br>
+	{{'mail.end.content2'|trans}} {{evaluationSession.candidate.user.email}} {{'mail.end.content3'|trans}} {{evaluationSession.evaluation}} {{'mail.end.content4'|trans}} {{ global|number_format(0) }}% {{'mail.end.content5'|trans}} {{ moyenne|number_format(0) }}%.
+{% endblock contenu_mail %}
+
+{% block lien_bouton_mail %}
+	{{ url('site_candidate_evaluation-session_test', {'token': evaluationSession.token}) }}
+{% endblock lien_bouton_mail %}
+
+{% block texte_bouton_mail %}
+	{{'mail.end.btn'|trans}}
+{% endblock texte_bouton_mail %}

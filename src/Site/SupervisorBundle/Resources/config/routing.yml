@@ -1,0 +1,14 @@
+SiteSupervisorBundle_core:
+    resource: "@SiteSupervisorBundle/Resources/config/routing/core.yml"
+
+SiteSupervisorBundle_evaluation:
+    resource: "@SiteSupervisorBundle/Resources/config/routing/evaluation.yml"
+    prefix:   /template
+    
+SiteSupervisorBundle_evaluation_session:
+    resource: "@SiteSupervisorBundle/Resources/config/routing/evaluation-session.yml"
+    prefix:   /session
+    
+SiteSupervisorBundle_ajax:
+    resource: "@SiteSupervisorBundle/Resources/config/routing/ajax.yml"
+    prefix:   /ajax

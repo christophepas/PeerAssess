@@ -1,0 +1,3 @@
+peerassess_marketing_website_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PeerassessMarketingWebsiteBundle:Default:index }

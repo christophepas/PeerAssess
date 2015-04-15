@@ -1,0 +1,16 @@
+services:
+    peerassess_core.evaluation_invite_manager:
+        class: Peerassess\CoreBundle\Service\EvaluationInviteManager
+        arguments: ["@doctrine.orm.entity_manager", "@security.context", "@site_candidate.notification_mailer", "@peerassess_core.evaluation_session_manager"]
+
+    peerassess_core.file_manager:
+        class: Peerassess\CoreBundle\Service\FileManager
+        arguments: ["%peerassess_core.file_upload_dir%"]
+
+    peerassess_core.test_manager:
+        class: Peerassess\CoreBundle\Service\TestManager
+        arguments: ["@peerassess_core.file_manager", "@doctrine.orm.entity_manager"]
+
+    peerassess_core.evaluation_session_manager:
+        class: Peerassess\CoreBundle\Service\EvaluationSessionManager
+        arguments: ["@peerassess_core.file_manager", "@doctrine.orm.entity_manager", "%nbCorrection%", "@site_candidate.notification_mailer"]

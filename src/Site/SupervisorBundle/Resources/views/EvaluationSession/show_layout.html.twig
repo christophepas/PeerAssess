@@ -1,0 +1,100 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block  id_content %}resultat{% endblock %}
+
+{% block content %}
+	<div class="resumeSession container-fluid">
+		<h1>
+			{{ evaluationSession.candidate }}
+		</h1>
+		{% if evaluationSession.candidate.evaluationSessions|length >1 %}
+		<div class="dropdown m-b">
+			<button class="btn card dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+				{{ evaluationSession.evaluation }} -
+				{% if evaluationSession is  closed %}
+					{% set value =  evaluationSession.globalScore * 100 %} {{ value |number_format(0) }} %
+				{% else %}
+					{{ evaluationSession.stringStatus }}
+				{% endif %}
+				- {{ evaluationSession.scheduledDate|date('d/m/Y H:i') }}
+				<span class="icon icon-arrow-down8"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				{% for session in evaluationSession.candidate.evaluationSessions %}
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="{{path("site_supervisor_evaluation-session_show",{'id':session.id})}}">
+						{{ session.evaluation }} -
+						{% if session is  closed %}
+							{% set value =  session.globalScore * 100 %} {{ value |number_format(0) }} %
+						{% else %}
+							{{ session.stringStatus }}
+						{% endif %}
+						- {{ session.scheduledDate|date('d/m/Y H:i') }}
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+		<div class="informations">
+			<div class="dropdown pull-right settings m-t-n">
+				<div class="btn dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+					<span class="icon icon-ellipsis c-primary"></span>
+				</div>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+					{% block options %}
+					{% endblock %}
+					<li role="presentation">
+						<div class="btn btn-danger c-white full-width" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#delete-modal-{{evaluationSession.id}}">
+							<span  class="icon icon-trash3"></span> {{ 'common.delete'|trans }}
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<table>
+						<tr>
+							<th>{{'common.date'|trans}}</th>
+							<td>{{ evaluationSession.scheduledDate|date('d/m/Y H:i') }}</td>
+						</tr>
+						<tr>
+							<th>{{'common.test'|trans}}</th>
+							<td><a href="{{ path('site_supervisor_evaluation-session_add-single', {'id': evaluationSession.evaluation.id}) }}">{{ evaluationSession.evaluation }}</a></td>
+						</tr>
+						<tr>
+							<th>{{'common.language'|trans}}</td>
+							<td>{{ evaluationSession.evaluation.test.language|language }}</td>
+						</tr>
+						<tr>
+							<th>{{'common.status'|trans}}</th>
+							<td>{{ evaluationSession.stringStatus }}</td>
+						</tr>
+					</table>
+					{% if evaluationSession is closed %}
+					<a href="{{ path('site_supervisor_test-session_file', {'id': evaluationSession.id}) }}" class="btn btn-main-s m-t" target="blank">
+						{{'evaluationSession.showClosed.file'|trans}}
+					</a>
+					{% endif %}
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div>
+						{% block summary %}
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if evaluationSession is  closed %}
+		<h4 class="insist c-primary m-t-lg m-l">{{'evaluationSession.showClosed.details'|trans}}</h4>
+		{% block details %}
+		{% endblock %}
+	{% endif %}
+
+	{% block modal2 %}
+		{% include 'SiteSupervisorBundle:EvaluationSession:delete_session_modal.html.twig' with {'evaluationSession':evaluationSession}  %}
+	{% endblock modal2 %}
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+  <input type="hidden" name="_target_path" value="{# will be set in the login listener #}" />
+  <input type="hidden" name="_csrf_token" value="" />
+  <input type="text" id="_username" name="_username" required="required" placeholder="{{ 'security.login.username'|trans({},'SiteUserBundle') }}" class="haut"/>
+  <input type ="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}" class="bas"/>
+  <input type="submit" id="_submit" name="_submit" value="{{ 'layout.login'|trans }}" class="btn-main-i btn full-width m-t">
+</form>
+<a href="{{ path("fos_user_resetting_request") }}" class="text-xs c-white">{{ 'resetting.forgot' |trans({},'SiteUserBundle')}}</a>
+
+<div class="separation"></div>
+
+<a href="{{ path('hwi_oauth_service_redirect', {'service': 'github' }) }}" alt="Sign in with Github" class="btn btn-github full-width">
+  <span class="icon icon-github"></span>
+  &nbsp;&nbsp;
+  {{'form.github'|trans({},'SiteUserBundle')}}
+</a>
+
+<div class="separation"></div>
+
+<div class="m-t-lg">
+  <div>
+    <i class="text-xs c-white">{{'form.notAlreadyRegistered'|trans({},'SiteUserBundle')}}</i>
+  </div>
+  <a href="{{ path('fos_user_registration_register') }}" class="full-width btn btn-main-3">
+		{{ 'form.signUp' |trans({},'SiteUserBundle')}}
+	</a>
+</div>

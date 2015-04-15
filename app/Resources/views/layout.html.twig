@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title %}PeerAssess{% endblock %}</title>
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
+  <link rel="icon" type="image/png" href="{{ optipng('favicon.png') }}" />
+</head>
+<body>
+
+
+
+
+{% block body %}
+ <div id="wrapper" class="active">
+		<a id="menu-toggle" class="icon inactive" href="#">
+			<span class="icon icon-arrow-left8"></span>
+		</a>
+    <!-- Sidebar -->
+    {% block sidebar %}
+    {% endblock %}
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="container-dashboard">
+      {% block page_header %}
+      <div class="content-header">
+        <div class="titre">
+            {% block page_title %}{% endblock %}
+        </div>
+        {% block logged %}{% endblock %}
+      </div>
+      {% include "SiteCoreBundle:Utils:flash_page.html.twig" %}
+      {% endblock %}
+
+      {% block container %}
+      {% endblock %}
+
+		  {% block modal %}
+		  {% endblock modal %}
+
+    </div>
+  </div>
+{% endblock %}
+
+
+  <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script>
+	  //ouverture/fermeture du menu latéral
+	  //action sur le bouton d'ouverture/fermeture du menu
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper,#menu-toggle").toggleClass("active inactive");
+    });
+    //on sort le menu si on clique sur une icône avec une liste en dessous (class parent)
+    $(".sidebar-nav .parent").click(function(e) {
+      e.preventDefault();
+      if ($("#wrapper").hasClass("inactive")){
+      $("#wrapper,#menu-toggle").toggleClass("active inactive");
+      }
+      else{}
+    });
+    //si le slider est ouvert, on peut le refermer en cliquant n'importe où dans la page
+    //FONCTION COMMENTÉE CAR SLIDER ACTIF PAR DÉFAUT
+    // $('#page-content-wrapper').click(function() {
+    //   if ($("#wrapper").hasClass("active")){
+    //   $("#wrapper").toggleClass("active inactive");
+    //   }
+    //   else{}
+    // });
+    //permet de bien actionner les déclencheurs click
+    $('#sidebar-wrapper a').not('#btn-feedback').click(function(event){
+        event.stopPropagation();
+    });
+  </script>
+
+{% block javascript %}
+{% endblock %}
+</body>
+</html>

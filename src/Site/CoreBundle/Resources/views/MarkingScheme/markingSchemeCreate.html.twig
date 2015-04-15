@@ -1,0 +1,86 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block page_title %}
+	Create a marking scheme
+{% endblock %}
+
+{% block id_content %}schemeCreate{% endblock %}
+
+{% block content %}
+{{ form_start(form, {'attr': {'id': 'marking-scheme-form'}}) }}
+	<div class="card-pad m-t">
+		<div class="title">
+			{{ form_widget(form.title,{'attr': {'placeholder':'test.createScheme.title'|trans,'autofocus':true}}) }}
+		</div>
+		<div class="introduction">
+			{{ form_widget(form.introduction,{'attr': {'placeholder':'test.createScheme.introduction'|trans}}) }}
+		</div>
+	</div>
+	<div id="marking-scheme-form-content">
+		<div class="m-t m-b">
+			{{'test.createScheme.sectionDetails'|trans}}
+		</div>
+		{{ form_widget(form.sections) }}
+	</div>
+	<div class=" m-t full-width text-center">
+		{{form_widget(form.children.save,{'attr':{'class':'btn btn-main-s'}})}}
+	</div>
+	{{ form_rest(form) }}
+{{ form_end(form) }}
+{% endblock %}
+
+{% block collection_widget %}
+{% spaceless %}
+	<div class="collection" data-count="{{ form|length }}" data-prototype-name="{{ form.vars.prototype.vars.name }}">
+		{% if prototype is defined %}
+			{% set attr = attr|merge({'data-prototype': block('collection_item_widget') }) %}
+		{% endif %}
+		<div {{ block('widget_container_attributes') }}>
+			<div class="collection-sub-items">
+				{% for rows in form %}
+					{{ block('collection_item_widget', {'prototype': rows}) }}
+				{% endfor %}
+				{{ form_rest(form) }}
+			</div>
+		</div>
+		<button class="collection-item-add btn btn-main m-t" title="Add">
+			{{ ('test.createScheme.add'~prototype.parent.vars.name) |trans }}
+		</button>
+	</div>
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_widget %}
+{% spaceless %}
+	<div class="collection-item">
+		{% for row in prototype %}
+			<div class="grade-{{row.vars.name}}">
+				{{ form_widget(row,{'attr': {'placeholder':('test.createScheme.grade'~row.vars.name)|trans}}) }}
+			</div>
+		{% endfor %}
+		{% if prototype.parent.vars.name =='sections' %}
+			<button class="collection-item-remove btn btn-main-d m-t" title="Remove">
+				{{ 'test.createScheme.removeSection' |trans }}
+			</button>
+		{% elseif prototype.parent.vars.name =='grades' %}
+			<a href="#" class="danger collection-item-remove" title="Remove">
+				<span class="icon icon-cancel-circle"></span>
+			</a>
+		{% endif %}
+	</div>
+{% endspaceless %}
+{% endblock collection_item_widget %}
+
+{% block javascript %}
+	{{ parent() }}
+	{% include '::form_theme_js.html.twig' %}
+
+	<script charset="utf-8">
+		window.peerassess.collectionizeForm('#marking-scheme-form-content');
+	</script>
+{% endblock %}
+
+

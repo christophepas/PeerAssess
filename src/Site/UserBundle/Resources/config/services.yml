@@ -1,0 +1,43 @@
+parameters:
+    site.oauth.user_provider.class: Site\UserBundle\OAuth\UserProvider
+
+services:
+    site_user.registration.form.type:
+        class: Site\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%, "@router"]
+        tags:
+            - { name: form.type, alias: site_user_registration }
+
+    site_user.registration_confirm:
+        class: Site\UserBundle\EventListener\RegistrationListener
+        arguments: ['@router', '@mailer', '@twig', '@doctrine']
+        tags:
+            - { name: kernel.event_subscriber, priority: 200 }
+
+    site_user.resetting_confirm:
+        class: Site\UserBundle\EventListener\ResettingListener
+        arguments: ["@router"]
+        tags:
+            - { name: kernel.event_subscriber, priority: 200 }
+
+    site_user.login_listener:
+        class: Site\UserBundle\EventListener\LoginListener
+        arguments: ['@router', '@doctrine.orm.entity_manager', '@security.context']
+        tags:
+            - { name: kernel.event_subscriber, priority: 200 }
+
+    site_user.invite_listener:
+        class: Site\UserBundle\EventListener\InviteListener
+        arguments: ['@router', '@doctrine.orm.entity_manager', '@security.context', '@peerassess_core.evaluation_invite_manager','@translator.default']
+        tags:
+            - { name: kernel.event_subscriber, priority: 300 }
+
+    site_user.profile.form.type:
+        class: Site\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: site_user_profile }
+
+    site.oauth.user_provider:
+        class: %site.oauth.user_provider.class%
+        arguments: ['@fos_user.user_manager', { github: githubId }]

@@ -1,0 +1,52 @@
+peerassess_admin:
+    resource: "@PeerassessAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+peerassess_marketing_website:
+    resource: "@PeerassessMarketingWebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# should disappear soon
+site_core:
+    resource: "@SiteCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# should disappear soon
+site_supervisor:
+    resource: "@SiteSupervisorBundle/Resources/config/routing.yml"
+    prefix:   /dashboard
+
+# should disappear soon
+site_candidate:
+    resource: "@SiteCandidateBundle/Resources/config/routing.yml"
+    prefix:   /candidate/dashboard
+
+# should disappear soon
+site_vitrine:
+    resource: "@SiteVitrineBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# should disappear soon
+site_user:
+    resource: "@SiteUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+github_login:
+    pattern: /login/check-github
+
+not_found_fallback:
+    pattern: /{path}
+    defaults: { _controller: SiteCoreBundle:NotFound:notFound }
+    requirements:
+        path: .*

@@ -1,0 +1,13 @@
+{% if (0 <= value) and (value <= 25) %}
+  <div class="progress-bar progress-bar-xs" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value|number_format(0) }}%">
+{% elseif (26 <= value) and (value <= 50)%}
+  <div class="progress-bar progress-bar-sm" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value|number_format(0) }}%">
+{% elseif (51 <= value) and (value <= 75)%}
+  <div class="progress-bar progress-bar-md" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value|number_format(0) }}%">
+{% elseif (76 <= value) and (value <= 100)%}
+  <div class="progress-bar progress-bar-lg" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value|number_format(0) }}%">
+{% else %}
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value|number_format(0) }}%">
+{% endif %}                                             
+  <h3 class="pourcentage">{{ value|number_format(0) }}%</h3>
+</div>

@@ -1,0 +1,43 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+
+
+{% block  id_content %}fiche{% endblock %}
+{% block page_title %}{{ 'pageTitle.testShow'|trans }}{% endblock %}
+{% block content %}
+<div class="card padder padder-v">
+	{% if evaluation.average > 0 %}
+		{% set value =  evaluation.average * 100 %}
+		<div>
+			<h3 class="score">{{ 'evaluation.show.average'|trans }} : <span class="invalid">{{ value|number_format(0) }}%</span></h3>
+			<div class="progress">
+				<div id="myProgress" class="progress-bar" role="progressbar" aria-valuenow="{{ value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+				</div>
+			</div>​
+		</div>
+	{% endif %}
+	<a href="{{ path('site_supervisor_evaluation-session_add-single', {'id': evaluation.id}) }}" class="btn btn-main">{{ 'common.newCandidate'|trans }}</a>
+</div>
+
+<table  class=" tablesorter table-dashboard">
+  {% include 'SiteSupervisorBundle:EvaluationSession:table.html.twig' with {'invites':evaluation.invites} %}
+</table>
+{% block modal2 %}
+	{% for invite in evaluation.invites %}
+		{% include 'SiteSupervisorBundle:EvaluationSession:delete_invite_modal.html.twig' with{'invite':invite} %}
+	{% endfor %}
+{% endblock modal2 %}
+{% endblock content %}
+
+
+
+{% block javascript %}
+  {{ parent() }}
+	{% include '::form_theme_js.html.twig' %}
+
+	<script charset="utf-8">
+		window.peerassess.collectionizeForm('#add-form');
+	</script>
+{% endblock javascript %}

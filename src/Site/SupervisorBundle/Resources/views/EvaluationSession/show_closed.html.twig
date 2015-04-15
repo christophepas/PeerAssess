@@ -1,0 +1,116 @@
+{% extends 'SiteSupervisorBundle:EvaluationSession:show_layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block page_title %}{{ 'pageTitle.showClosed'|trans }}{% endblock %}
+
+{% block summary %}
+	<table class="table-score">
+		<tr>
+			<td class="titre">{{ 'common.candidate'|trans }}</td>
+			<td class="score">
+				<div class="progress progress-global">
+					{% set value =  evaluationSession.globalScore * 100 %}
+					<div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+						<div class="pourcentage">{{ value|number_format(0) }}%</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="titre">{{ 'common.average'|trans }}</td>
+			<td class="score">
+				<div class="progress progress-average">
+					{% set value =  evaluationSession.evaluation.average * 100 %}
+					<div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+						<div class="pourcentage">{{ value|number_format(0) }}%</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="titre">{{ 'common.time'|trans }}</td>
+			<td>
+				<span class="time">{{evaluationSession.length}}</span>
+				/
+				<span class="time">{{evaluationSession.evaluation.test.duration}}</span>
+			</td>
+		</tr>
+	</table>
+{% endblock %}
+
+{% block details %}
+	{% for correction in evaluationSession.correctionsReceived %}
+		<div class="col-xs-12 col-sm-6  ">
+			<div class="card-pad">
+				<div class="text-muted">
+					{{'common.by'|trans}}
+					<a href="{{path("site_supervisor_evaluation-session_show",{'id':correction.evaluationSessionGiver.id})}}">
+						{{ correction.evaluationSessionGiver.candidate }}
+					</a>
+				</div>
+				<div class="progress progress-global-small m-t m-b">
+					{% set value =  correction.score * 100 %}
+					<div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+						<div class="pourcentage">{{ value|number_format(0) }}%</div>
+					</div>
+				</div>
+				<table class="table-list table-bordered">
+					<tbody>
+						{% for grade in correction.grades %}
+						<tr>
+							<td class="">{{ grade.markingSchemeGrade.name }}</td>
+							<td class="insist c-primary">{{ grade.score }}/2</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<p>
+					{{correction.comment}}
+				</p>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock details %}
+
+{% block javascript %}
+	{{parent()}}
+<script type="text/javascript">
+	 $(function(){
+		 $('#loading2').fadeTo("fast",0);
+			 // TODO : fix  this
+			 // for chrome reload editor on tab change
+			 $('.nav-tabs a').click(function()
+		 {
+			 $(this).tab('show');
+			 ace.edit($(this).attr('target-id') + "_code_ace").resize(true);
+
+		 });
+
+		 $('.exercice-tab').click(function()
+		 {
+			 var testSessionId = $(this).attr('test-session');
+			 if($('#exercice' + testSessionId).is(':empty'))
+			 {
+				 $('#loading2').fadeTo("fast",1);
+				 var url = "{# path('site_supervisor_test-session_show', {'id': '__ID__'}) #}".replace("__ID__", testSessionId);
+				 $('#exercice' + testSessionId).load(url,function()
+				 {
+					 $('#loading2').fadeTo("fast",0);
+				 });
+			 }
+		 });
+	 });
+		$(document).ready(function()
+			{
+				$('.time').each(function() {
+					var time = $(this).html();
+					var hours = parseInt( time / 3600 ) % 24;
+					var minutes = parseInt( time / 60 ) % 60;
+					var seconds = time % 60;
+					var result = (hours < 10 ? "0" + hours : hours) + "h " + (minutes < 10 ? "0" + minutes : minutes) + "m ";
+					$(this).html(result);
+				});
+			}
+		);
+	 </script>
+{% endblock javascript %}

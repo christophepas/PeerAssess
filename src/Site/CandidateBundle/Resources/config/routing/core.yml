@@ -1,0 +1,7 @@
+site_candidate_core_homepage:
+    path:      /
+    defaults:  { _controller: "SiteCandidateBundle:Core:homepage" }
+
+site_candidate_invite_claim:
+    path: /invite/{id}/claim
+    defaults: { _controller: "SiteCandidateBundle:Core:claimInvite" }

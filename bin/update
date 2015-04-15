@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This scripts puts the new version of the site on the production server.
+#
+# Usage: ./bin/update
+
+git pull origin master && \
+php app/console cache:clear --env=prod && \
+rm -rf app/cache/* && \
+php composer.phar update && \
+php app/console doctrine:migrations:migrate && \
+php app/console asset:install && \
+php app/console assetic:dump --env=prod

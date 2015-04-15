@@ -1,0 +1,15 @@
+{% extends '::layout_mail.html.twig' %}
+
+{% block contenu_mail %}
+	Bonjour,
+	<br><br>
+	Nous avons le plaisir de vous annoncer que votre accès à Peerassess est maintenant prêt. Confirmez votre compte 
+{% endblock contenu_mail %}
+
+{% block lien_bouton_mail %}
+	{{ confirmationUrl }}
+{% endblock lien_bouton_mail %}
+	
+{% block texte_bouton_mail %}
+	Se connecter
+{% endblock texte_bouton_mail %}

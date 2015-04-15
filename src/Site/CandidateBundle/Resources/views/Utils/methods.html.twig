@@ -1,0 +1,18 @@
+<table class="table-style">
+    <tr class="line1">
+      <th class="col1">Classe</th>
+      <th class="col2">Nom</th>
+      <th class="col1">Paramètres d'entrée</th>
+      <th class="col2">Retour attendu</th>
+    </tr>
+    {% for testSkeleton in testSkeletons %}
+    {% for testMethod in testSkeleton.testMethods %}
+    <tr>
+      <td>{{ testSkeleton.fileName }}</td>
+      <td>{{ testMethod.name }}()</td>
+      <td>{% for input in testMethod.inputs %}{{ input.type.type }} {{ input.name }}{% if not loop.last %}, {% endif %}{% else %}Pas d'entrée{% endfor %}</td>
+      <td>{% if testMethod.isConstructor %}Constructeur{% else %}{{ testMethod.output.type }}{% endif %}</td>
+    </tr>            
+    {% endfor %}     
+    {% endfor %}
+</table>

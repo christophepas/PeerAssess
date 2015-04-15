@@ -1,0 +1,20 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+<div id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<li class="logo">
+			<a href="{{path('site_candidate_core_homepage')}}"></a>
+		</li>
+		<li>
+			<div class="side" data-toggle="modal" href="#support-modal">
+				<span class="onglet">{{ 'common.support'|trans }}</span>
+				<span class="image">
+					<span class="icon icon-help"></span>
+				</span>
+			</div>
+		</li>
+	</ul>
+	<div class="footer">
+		<br>{% include "SiteCoreBundle:Utils:switch_locale.html.twig" %}
+		<br>Peerassess 2015<br>{{ version }}
+	</div>
+</div>

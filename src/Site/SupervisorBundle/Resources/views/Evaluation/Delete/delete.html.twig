@@ -1,0 +1,23 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+	{% for evaluation in evaluations %}
+		<div class="modal fade" id="delete-modal-{{evaluation.id}}">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title">{{ 'evaluation.delete.title'|trans }}</h4>
+		      </div>
+
+		      <div class="modal-body">
+				<div class="alert alert-danger">{{ 'evaluation.delete.content'|trans }} "{{evaluation}}" {{ 'evaluation.delete.content2'|trans }}</div>
+				<a href="{{ path('site_supervisor_evaluation_delete', {'id': evaluation.id}) }}"class='btn btn-danger'> {{ 'evaluation.delete.submit'|trans }}</a>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'common.cancel'|trans }}</button>
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	{% endfor %}

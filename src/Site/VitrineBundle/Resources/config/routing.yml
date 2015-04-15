@@ -1,0 +1,15 @@
+site_vitrine_core_homepage:
+    path:      /
+    defaults:  { _controller: "SiteVitrineBundle:Core:company" }
+
+site_vitrine_core_company:
+    path:      /company
+    defaults:  { _controller: "SiteVitrineBundle:Core:company" }
+
+site_vitrine_core_team:
+    path:      /equipe
+    defaults:  { _controller: "SiteVitrineBundle:Core:team" }
+
+# site_vitrine_core_faq:
+#     path: /faq
+#     defaults: { _controller: "SiteVitrineBundle:Core:faq"}

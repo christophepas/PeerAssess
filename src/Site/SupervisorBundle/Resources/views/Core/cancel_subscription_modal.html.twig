@@ -1,0 +1,21 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+<div class="modal fade" id="cancel-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">{{ 'subscribe.cancel.title'|trans }}</h4>
+      </div>
+
+      <div class="modal-body">
+		<div class="alert alert-danger">{{ 'subscribe.cancel.content'|trans }} </div>
+		<a href="{{path('site_supervisor_core_cancel-subscribe')}}"class='btn btn-danger'>{{ 'subscribe.cancel.btn'|trans }}</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'common.cancel'|trans }}</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

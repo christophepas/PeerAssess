@@ -1,0 +1,99 @@
+common:
+    logout: déconnexion
+    hoursAnd: heures et
+    minutes: minutes
+    support: Aide
+    correction: correction
+    save: enregistrer
+    cancel: annuler
+    goOn: continuer
+
+invite:
+    claimed: Vous avez été invité à passer un test.
+
+welcome:
+    title: Bienvenue sur Peerassess !
+    content: Merci de vous être inscrit(e) à notre service. Celui-ci est encore en préparation, nous vous tiendrons informé(e) de nos avancements et reviendrons vite vers vous.
+
+start:
+    time1: Vous êtes en temps limité pour finir ce test; une fois que vous aurez cliqué sur ce bouton, vous aurez
+    time2: pour le finir. Bonne chance !
+    slide1:
+        title: Bienvenue
+        content: Vous allez être testé(e) sur vos compétences informatiques <span class="insist">en conditions réelles</span>. Plutôt que de se restreindre à regarder vos connaissances théoriques, Peerassess vous propose de travailler sur <span class="insist">un projet dans vos conditions de travail habituelles</span>.<br>Voici quelques éléments de présentation pour vous faire découvrir le système.
+    slide2:
+        title: Instructions
+        content: En démarrage d'exercice, vous accéderez à :<ul class="text-left"><li>une documentation décrivant le projet et ce que vous devez y apporter</li><li>Un fichier .zip contenant le projet initial</li><li>Quelques impératifs sur les technologies à utiliser</li><li>Les bonnes pratiques à respecter</li></ul>
+    slide3:
+        title: Travail
+        content: Vous allez travailler en conditions réelles : sur votre machine, avec accès à l'ensemble de vos ressources habituelles. <br>Pour finir l'exercice vous deverez soumettre votre résultat par .zip et ce <span class="insist">avant la fin du temps imparti</span>.
+    slide4:
+        title: Corrections
+        content: La seconde partie de votre travail sera de corriger d'autres copies du même exercice, avec un bareème précis, et de faire des feedbacks constructifs. <br><br><span class="insist">Attention</span>, cette partie de l'exercice permet de voir votre capacité à relire, comprendre et améliorer le code de vos pairs, et <span class="insist">la note que vous donnerez impactera votre score</span>.
+    slide5:
+        title: Feedback
+        content: Nous avons besoin de vos retours; cet outil sera utilisé par de nombreux candidats, et nous cherchons à réunir des conditions de test idéales pour vous laisser montrer au mieux vos compétences.<br>Merci d'avance et que la force soit avec vous !
+    btn: Lancer le test
+
+test:
+    remainingTime: temps restant
+    over: le test est terminé
+    startLink: Lien vers le ".zip" de départ
+    end:
+        text: Une fois votre test terminé, veuillez uploader votre résultat sous format .zip .
+        btn: Finir le test
+    modal:
+        title: Attention
+        text: Attention, ceci validera définitivement votre code, vous ne pourrez plus le modifier
+    lateSubmission: Vous avez envoyé votre résultat trop tard. Le résultat ne sera pas pris en compte.
+    lateCorrection: Vous avez mis trop de temps à corriger les autres. Votre temps de correction est terminé.
+end:
+    title: Test terminé !
+    content: Merci de ta participation, ta session de test est terminée et les résultats seront bientôt disponibles.
+
+correction:
+    title: Corrections
+    content1: Nous vous avons assigné les corrections suivantes. Soyez aussi précis(e) que possible : cette étape permet de voir votre capacité à lire du code et à l'analyser de manière critique (un morceau de code est lu plus souvent qu'il n'est écrit). Faites ressortir les bons et mauvais aspects.
+    warning: Attention : votre résultat final sera directement impacté par cette étape. Notez avec autant de précision que possible.
+    grade:
+        explain: Pourquoi donnez-vous cette note ?
+        bad: Mauvais
+        ok: Ok
+        good: Bon
+    comment:
+        title: Exprimez-vous
+        text: Ce travail est-il meilleur ou moins bien que le vôtre ? Quels points majeurs auraient pu être améliorés et quels éléments auriez-vous intégrés dans votre travail si vous en aviez eu l'occasion ?
+    ddlFile: télécharger le résultat
+    await:
+        title: En attente de corrections
+        text: Nous sommes en train de vous trouver d'autres candidats à corriger. Vous recevrez un mail quand il y en aura suffisament.
+    late: Le temps de correction est terminé.
+    progress: Avancement : Correction
+    launch: correction suivante
+    send: Enregistrer (définitif)
+
+mail:
+    end:
+        title1: Le test de
+        title2: est terminé
+        content1: Bonjour,
+        content2: Le test de
+        content3: sur le sujet
+        content4: vient de se terminer; son score global est de
+        content5: pour un score moyen sur ce sujet  de
+        btn: Résultats détaillés
+    correctionReady:
+        title: Vous pouvez corriger d'autres copies
+        content1: Bonjour,
+        content2: Vous avez récemment passé un test sur Peerassess. Vient maintenant le peer-correcting: vous êtes chargé(e) de donner du feedback à d'autres candidats qui ont passé le même test que vous.<br>Vous avez jusqu'à:
+        content3: D'autres candidats sont en train de préparer du feedback pour votre rendu afin que vous puissiez voir ce qui était bien et ce qui aurait pu être amélioré.
+        btn: Accéder au peer-correcting
+    invite:
+        title: Vous êtes invité à passer un test de compétences.
+        hello: Bonjour,
+        testDate: Vous pourrez commencer le test à partir du
+        btn: Commencer le test
+    late_start:
+        title: Votre candidat "%email%" n'a pas commencé son test à temps
+        greet: Bonjour,
+        content: Votre candidat "%email%" n'a pas commencé son test à temps.

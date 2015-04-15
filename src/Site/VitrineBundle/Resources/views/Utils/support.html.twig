@@ -1,0 +1,26 @@
+{% trans_default_domain 'SiteVitrineBundle' %}
+<div class="modal fade" id="support-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{ 'common.close'|trans }}</span></button>
+        <h4 class="modal-title" id="supportModal">{{ 'support.title'|trans }}</h4>
+      </div>
+      <div class="modal-body">
+        {{ 'support.content'|trans }}
+        <div class="row contact">
+          <div class="col-xs-6 ">
+            <span class="icon icon-phone"></span> {{ 'support.tel'|trans }}
+          </div>
+          <div class="col-xs-6 ">
+            <span class="icon icon-mail6"></span> {{ 'support.mail'|trans }}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'common.close'|trans }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+

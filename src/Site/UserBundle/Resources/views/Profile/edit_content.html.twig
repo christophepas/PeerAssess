@@ -1,0 +1,28 @@
+{% trans_default_domain 'SiteUserBundle' %}
+<div class="fos_user_user_edit fos_user">
+	<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+		<table>
+			{{ form_errors(form) }}
+		  <tr>
+			<td class="attribut">{{ form_label(form.email) }}</td>
+			<td class="champ">
+			{{ form_widget(form.email) }}
+			</td>
+		  </tr>
+		  <tr>
+			<td class="attribut">{{ form_label(form.current_password) }}</td>
+			<td class="champ">
+			{{ form_widget(form.current_password) }}
+			</td>
+		  </tr>
+		</table>
+		<div class="btn-group">
+			{{form_widget(form.submit)}}
+			<button class="btn btn-main btn-danger show-profile">{{ 'security.cancel'|trans }}</button>
+		</div>
+		{{form_widget(form._token)}}
+		<div class="hidden">
+		{{form_rest(form)}}
+		</div>
+	</form>
+</div>

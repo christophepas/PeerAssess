@@ -1,0 +1,33 @@
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteCandidateBundle' %}
+
+{% block page_title %}
+	Correction - {{ session.evaluation.test.name }}
+{% endblock %}
+
+{% block content %}
+<div class="card-pad">
+	<h2>{{ 'correction.title'|trans }}</h2>
+	<p>{{ 'correction.content1'|trans }}</p>
+	<p class='alert-danger padder padder-v'>{{ 'correction.warning'|trans }}</p>
+	<div class="full-width text-center">
+		<div class="insist c-primary">
+			{{ 'correction.progress'|trans }}
+			{{ (session.correctionsGiven|length - session.pendingCorrectionsGiven|length)}}
+			/
+			{{(session.correctionsGiven|length) }}
+		</div>
+		<div class="progress">
+			{% set progress =  100*(session.correctionsGiven|length - session.pendingCorrectionsGiven|length)/(session.correctionsGiven|length) %}
+			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+				{{progress}}%
+			</div>
+		</div>
+		<p>
+			<a class="btn btn-main btn-main-s m-t" href="{{ path('site_candidate_evaluation-session_correction_one', {'token': session.token, 'correctionId': session.nextPendingCorrectionGiven.id})}}">
+				{{ 'correction.launch'|trans }}
+			</a>
+		</p>
+	</div>
+</div>
+{% endblock content %}

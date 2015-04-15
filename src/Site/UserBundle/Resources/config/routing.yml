@@ -1,0 +1,3 @@
+site_user_evaluation_invite_retrieve:
+    pattern: /invite/{token}
+    defaults: { _controller: "SiteUserBundle:EvaluationInvite:retrieve"}

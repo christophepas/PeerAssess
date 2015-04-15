@@ -1,0 +1,162 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block page_title %}{{ 'company.title'|trans }} - {{ supervisor.company }}{% endblock %}
+
+{% block id_content %}payment{% endblock %}
+{% block content %}
+  <div class="row">
+
+    <div class="col-xs-12 col-lg-10 col-centered">
+      <div class="informations">
+
+        <table class="table-pricing">
+          <thead>
+            <tr class="theadfirst">
+              <th>
+                {{ 'subscribe.eco'|trans }}
+              </th>           
+              <th>
+                {{ 'subscribe.business'|trans }}
+              </th>           
+              <th>
+                {{ 'subscribe.first'|trans }}
+              </th>             
+            </tr>    
+            <tr class="theadbis">
+              <th>  
+                <span class="currency"> €</span>       
+                <span class="price"> {{ 'subscribe.prix.eco'|trans }}</span>
+                <span class="permonth">{{ 'subscribe.perMonth'|trans }}</span>
+              </th>          
+              <th>         
+                <span class="currency"> €</span>       
+                <span class="price"> {{ 'subscribe.prix.business'|trans }}</span>   
+                <span class="permonth">{{ 'subscribe.perMonth'|trans }}</span>                                
+              </th>    
+              <th>
+                <a class="contact-link" href="{{ path("site_core_core_contact") }}">
+                  {{ 'subscribe.prix.first'|trans }}
+                </a>                        
+              </th>                                              
+            </tr>                                                                           
+          </thead>
+          <tbody>  
+            <tr>
+              <td>
+                <span class='icon icon-users'></span>
+                {{ 'subscribe.nbTests.eco'|trans }} {{ 'subscribe.candidates'|trans }}
+              </td>
+              <td>
+                <span class='icon icon-users'></span>
+                {{ 'subscribe.nbTests.business'|trans }} {{ 'subscribe.candidates'|trans }}
+              </td>               
+              <td>
+                <span class='icon icon-users'></span>
+                {{ 'subscribe.nbTests.first'|trans }}                
+              </td>                                         
+            </tr>        
+            <tr>
+              <td>
+                <span class='icon icon-docs'></span>
+                {{ 'subscribe.exercices.eco'|trans }}
+              </td>
+              <td>
+                <span class='icon icon-docs'></span>
+                {{ 'subscribe.exercices.business'|trans }}
+              </td>               
+              <td>
+                <span class='icon icon-docs'></span>
+                {{ 'subscribe.exercices.first'|trans }}                
+              </td>                                         
+            </tr>           
+            <tr>
+              <td>
+                <span class='icon icon-exit'></span>
+                {{ 'subscribe.engagement.eco'|trans }}
+              </td>
+              <td>
+                <span class='icon icon-exit'></span>
+                {{ 'subscribe.engagement.business'|trans }}
+              </td>               
+              <td>
+                <span class='icon icon-exit'></span>
+                {{ 'subscribe.engagement.first'|trans }}                
+              </td>                                         
+            </tr>     
+            <tr>
+              <td>
+                {% if supervisor.company.plan != 'standard' %}
+                <form action="{{ path('site_supervisor_core_subscribe', { 'newPlan': 'standard' }) }}" method="POST">
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_RxSOd2f4Hxa0pBGlMqxFQt4i"
+                    data-amount="9900"
+                    data-name="{{ 'subscribe.widget.standard.subscriptionName'|trans }}"
+                    data-description="€99{{ 'subscribe.perMonth'|trans }}"
+                    data-image="{{ optipng('img/logo/logo128x128.png') }}"
+                    data-currency="EUR"
+                    data-panel-label="{{ 'subscribe.widget.standard.panelLabel'|trans }}"
+                    data-email="{{supervisor.user.email}}"
+                    data-label="{{ 'subscribe.widget.label'|trans }}">
+                  </script>
+                </form>  
+                {% else %}
+                {{ 'subscribe.subscribe.currentPlan'|trans }}                
+                {% endif %}                
+              </td>
+              <td>
+                {% if supervisor.company.plan != 'business' %}
+                <form action="{{ path('site_supervisor_core_subscribe', { 'newPlan': 'business' })  }}" method="POST">
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_RxSOd2f4Hxa0pBGlMqxFQt4i"
+                    data-amount="29900"
+                    data-name="{{ 'subscribe.widget.business.subscriptionName'|trans }}"
+                    data-description="€299{{ 'subscribe.perMonth'|trans }}"
+                    data-image="{{ optipng('img/logo/logo128x128.png') }}"
+                    data-currency="EUR"
+                    data-panel-label="{{ 'subscribe.widget.business.panelLabel'|trans }}"
+                    data-email="{{supervisor.user.email}}"
+                    data-label="{{ 'subscribe.widget.label'|trans }}">
+                  </script>
+                </form>         
+                {% else %}
+                {{ 'subscribe.subscribe.currentPlan'|trans }}
+                {% endif %}
+              </td>
+              <td>
+                <div class="btn btn-main btn-info btn-lg">
+                  {{ 'subscribe.subscribe.contact'|trans }}
+                </div>
+              </td>
+            </tr>                                          
+
+          </tbody>                                                                            
+        </table>     
+        {% if supervisor.company.plan != 'trial' and supervisor.company.plan != 'trialended' and supervisor.company.plan != 'canceled' %}
+          <a data-toggle="modal" data-target="#cancel-modal" class="btn btn-main btn-danger">{{ 'company.cancelPlan'|trans }}</a>
+          <a href=""></a>
+        {% endif %}
+      </div>
+    </div>     
+
+  </div>    
+{% endblock content %}
+
+
+  {% block modal %}
+    {{parent()}}
+{% if supervisor.company.plan != 'trial' and supervisor.company.plan != 'trialended' and supervisor.company.plan != 'canceled' %}
+    {% include 'SiteSupervisorBundle:Core:cancel_subscription_modal.html.twig' %}
+{% endif %}
+  {% endblock modal %}  
+
+
+{% block javascripts %}
+{{parent()}}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+
+</script>
+{% endblock  javascripts %}

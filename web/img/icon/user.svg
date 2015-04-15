@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#525252" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="user" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+            <path d="M34.307,39.173 C34.307,39.173 37.479,36.033 38.171,31.81 C40.031,31.81 41.18,27.32 39.32,25.741 C39.398,24.078 41.711,12.688 30.001,12.688 C18.291,12.688 20.604,24.078 20.681,25.741 C18.821,27.321 19.97,31.81 21.83,31.81 C22.521,36.033 25.694,39.173 25.694,39.173 C25.694,39.173 25.669,42.142 24.59,42.313 C21.112,42.866 7.83855,44.095633 7.83855,50.376633 C9.10155324,51.0681282 11.0620237,53.5199268 13.7870921,55.4085658 C13.8636094,55.461597 13.9405972,55.5144603 14.0180407,55.567138 C18.2134648,58.4209015 23.7464704,60.7300722 28.2821638,59.6799472 C28.7336885,59.5754081 29.5410807,60.1415927 30.0010008,60.0934604 C32.9504811,59.7847862 35.7397202,59.7749248 39.3200017,58.4645656 C44.5798099,56.5395107 50.1212102,52.0596011 50.1212102,52.0596011 C50.1212102,45.7786011 38.891,42.867 35.413,42.313 C34.331,42.141 34.307,39.173 34.307,39.173 Z" id="Shape" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+            <path d="M30,60 C30.6225666,60 31.2407039,59.9810362 31.8538658,59.9436547 C47.5589592,58.986191 60,45.9459768 60,30 C60,13.4314567 46.5685433,0 30,0 C13.4314567,0 0,13.4314567 0,30 C0,46.5685433 13.4314567,60 30,60 Z" id="Oval-1" stroke="#202020" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+{% extends "SiteUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content  %}
+{% if error %}
+  <div class="error text">{{ error.message|trans({},'SiteUserBundle') }}</div>
+{% endif %}          
+{% include "SiteUserBundle:Security:login_content.html.twig" %}
+{% endblock content  %}

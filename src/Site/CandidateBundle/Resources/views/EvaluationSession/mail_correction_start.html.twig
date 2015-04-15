@@ -1,0 +1,18 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+{% extends '::layout_mail.html.twig' %}
+
+{% block contenu_mail %}
+{{'mail.correctionReady.content1'|trans}}
+<br><br>
+{{'mail.correctionReady.content2'|trans}}
+{{ evaluationSession.correctionEnd }}
+{{'mail.correctionReady.content3'|trans}}
+{% endblock contenu_mail %}
+
+{% block lien_bouton_mail %}
+	{{ url('site_candidate_evaluation-session_correction', {'token': evaluationSession.token}) }}
+{% endblock lien_bouton_mail %}
+
+{% block texte_bouton_mail %}
+	{{'mail.correctionReady.btn'|trans}}
+{% endblock texte_bouton_mail %}

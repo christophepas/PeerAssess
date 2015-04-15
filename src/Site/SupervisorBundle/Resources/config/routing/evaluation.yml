@@ -1,0 +1,15 @@
+site_supervisor_evaluation_add:
+    pattern:  /add
+    defaults: { _controller: "SiteSupervisorBundle:Evaluation:add" }
+
+site_supervisor_evaluation_list:
+    pattern:  /list
+    defaults: { _controller: "SiteSupervisorBundle:Evaluation:list" }
+
+site_supervisor_evaluation_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: "SiteSupervisorBundle:Evaluation:delete" }
+
+site_supervisor_evaluation_show:
+    pattern:  /show/{id}
+    defaults: { _controller: "SiteSupervisorBundle:Evaluation:show" }

@@ -1,0 +1,103 @@
+appAccess: Accès à l'application
+common:
+    goOn: Continuer
+    cancel: Annuler
+    send: Envoyer
+    close: Fermer
+layout:
+    meta:
+        description: Peerassess est le premier outil de peer assessment, faisant travailler les candidats sur des projets réels et se noter les uns les autres.
+    menu:
+        home: Accueil
+        presentation: Presentation
+        features: Fonctionnalités
+        appAccess: Application
+        signIn: Connexion
+    footer:
+        informations: Informations
+        faq: FAQ
+        team: L'équipe
+        contact: Contact
+        email: mail
+        subscribe: S'abonner
+        legal2: Peerassess 2015
+        changeLanguage: English version
+company:
+    home:
+        punchline: Découvrez le <span class="insist">un outil d'évaluation exceptionnel</span>
+        subPunchline: PeerAssess est la première plateforme de peer assessment. Elle est aussi open-source et gratuite. 
+        alreadyConnected: Vous êtes déjà connecté
+        askAccess: Demande d'accès
+        passForgot: Mot de passe oublié ?
+        connexion:
+            signIn: Connexion
+        inscription:
+            alreadySigned: Déjà inscrit ?
+        reset:
+            sentTitle: Nouveau mot de passe
+            sentMessage: Votre nouveau mot de passe est enregistré et prêt à l'emploi
+    presentation:
+        avantage1:
+            title: Une évaluation en <span class="insist">conditions réelles.</span>
+            text: Quelle que soit la compétence que vous souhaitez tester, Peerassess laisse le candidat travailler sur un <span class="insist">projet réel</span> avec accès à ses ressources de travail habituelles.
+        avantage2:
+            title: <span class="insist">Créez vos tests</span>
+            text: Vous pouvez choisir un sujet de test dans la librairie commune ou vous pouvez <span class="insist">facilement créer votre propre test et inviter des candidats à le passer</span>.
+        avantage3:
+            title: Des résultats <span class='insist'>clairs</span>
+            text: Peer assessement donne un score clair sans gaspiller le temps de professeurs ou d'experts. Vous obtenez en plus des détails de chaque candidat expliquant les notes qu'ils ont donné et comment chaque résultat aurait pu être amelioré.
+    features:
+        title1: En conditions réelles
+        content1: Contrairement à des QCM ou à des tests écrits, ou même à des tests en navigateur, Peerassess fait travailler les candidats <span class="insist">sur des projets et avec leurs outils</span>.
+        title2: Testez à distance
+        content2: PeerAssess peut être utilisé <span class="insist">à distance</span>, de telle sorte que les candidats peuvent passer leur testss quand ils sont prêts et dans un environnement paisible.
+        title3: Des résultats lisibles
+        content3: Les résultats des tests permettent à chaque superviseur de  <span class="insist">facilement analyser les résultats</span> tout en pouvant aller voir les fichiers soumis par le candidat.
+        title4: Se noter les uns les autres
+        content4: Le peer assessement demande à chaque candidat de noter le résultat de trois autres, donnant ainsi une bonne vision de ses compétences mais aussi de son esprit critique.
+        title5: Ne perdez plus votre temps
+        content5: Laissez <span class="insist">les professeurs ou les experts se concentrer sur leur vrai travail</span>et donnez des tests beaucoup plus formateurs aux candidats.
+    end:
+        openSource: PeerAssess est un projet open-source. Si vous voulez contribuer, veuillez visiter notre
+homepage:
+    buttons:
+        more: En savoir plus
+        signup: S'inscrire
+        callToAction: C'est parti !
+contact:
+    contactUs: Contactez-nous.
+    sendMail: Envoyez-nous un mail
+    callUs: Appelez-nous
+    writeUs: Ou écrivez-nous
+    form: Formulaire de contact
+    firstname: Prénom
+    lastname: Nom
+    email: Mail
+    company: Société
+    yourMessage: Votre message
+    send: Envoyer
+team:
+    title: Équipe
+    description1bis: Centrale paris
+    description2bis: 42
+faq:
+    text:
+        part1: Si vous avez d'autres questions, n'hésitez pas à
+        part2: nous contacter
+    question1: À qui s’adresse Peerassess ?
+    answer1: Peerassess s’adresse à toute entreprise ayant des besoins de recrutement en IT. Le processus de sélection d'un développeur est extrêmement coûteux en temps, que ce soit pour le directeur technique d'une PME ou bien pour le chargé de recrutement d'une multinationale. En automatisant l’évaluation des compétences de leurs candidats, nous simplifions leur tâche et leur faisons gagner une qualité et un temps précieux !
+    question2: En quoi les tests sont-ils en « conditions réelles » ?
+    answer2: Contrairement aux QCM et aux tests écrits, nous proposons une évaluation basée sur le code produit par le candidat au cours d'une série d'exercices; celui-ci a accès à l’ensemble de la documentation et des ressources qu’il utilise en conditions de travail habituelles. Cette manière de procéder permet d’aller plus loin qu'un simple test théorique et d’analyser les capacités réelles du candidat.
+    question3: Quand des tests pour d’autres langages seront-ils disponibles ?
+    answer3:
+        part1: Nous proposons aujourd’hui des tests en Java, Python et PHP permettant d’évaluer des candidats de tous niveaux. Nous sommes en cours de développement de tests dans d’autres langages, ainsi que sur des technologies spécifiques . N’hésitez pas à nous
+        part2: signaler vos besoins.
+    question4: Quels sont les frais d’utilisation de Peerassess ?
+    answer4:
+        part1: L'outil  d'évaluation à l'heure actuelle est entièrement gratuit et a vocation à le rester.
+    question5: Comment puis-je utiliser le service ?
+    answer5: Vous pouvez  dès à présent créer un compte via la page d'accueil et envoyer vos premières invitations de test à vos candidats !
+    question6: Votre service nécessite t-il une installation ?
+    answer6: Peerassess est un outil accessible par internet et ne nécessite donc aucune installation. Vous pourrez y accéder via n’importe quel navigateur internet récent.
+    question7: Aurai-je accès aux mises à jour de Peerassess ?
+    answer7: Les mises à jour seront directement ajoutées au service et vous en serez averti par mail.

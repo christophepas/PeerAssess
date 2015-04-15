@@ -1,0 +1,13 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+<td>{{ form_widget(prototype.candidate.email) }}</td>
+<td>{{ form_widget(prototype.evaluation) }}</td>
+<td>{{ form_widget(prototype.scheduledDate.date) }}</td>
+<td>{{ form_widget(prototype.scheduledDate.time) }}</td>
+<td>
+  <button class="btn btn-danger remove-line" type="button">
+  	<span class="icon icon-minus4">
+		{# {{ 'common.remove'|trans }} #}
+	</span>
+  </button>
+</td>

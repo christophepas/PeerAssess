@@ -1,0 +1,10 @@
+{% block flashMessages %}
+{% for type, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+        <div class="alert alert-{{ (type == 'notice') ? 'success' : 'warning' }}" role="alert">
+            {{ message }}
+            <span class="icon-cancel-circle close" data-dismiss="alert"></span>
+        </div>
+    {% endfor %}
+{% endfor %}
+{% endblock flashMessages %}   

@@ -1,0 +1,16 @@
+{% extends 'PeerassessAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+	<table>
+		{% for s in sessions %}
+			<tr>
+				<td>{{ s.id }}</td>
+				<td>{{ s.evaluation.name }} #{{ s.evaluation.id }}</td>
+				<td>{{ s.status }}</td>
+				<td>{{ s.candidate.user.email }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

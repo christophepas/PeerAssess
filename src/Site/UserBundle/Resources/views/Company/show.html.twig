@@ -1,0 +1,55 @@
+{% trans_default_domain 'SiteCustomerBundle' %}
+<div class="company company_show">	
+	<table>
+	  <tr>
+	    <td class="attribut">{{ 'common.company'|trans }}</td>
+	    <td class="champ">{{ customer.company.name }}</td>      
+	  </tr>                            
+	  <tr>
+	    <td class="attribut">{{ 'common.image'|trans }}</td>
+	    <td class="champ">
+		{% if customer.company.image is null %}
+			{{ 'company.noImage'|trans }}
+		{% else %}
+			<img src="{{asset(customer.company.image.webPath)}}" alt="{{customer.company.image.alt}}">
+		{% endif %}	    	
+	    </td>      
+	  </tr>
+	  <tr>
+	    <td class="attribut">{{ 'company.plan'|trans }}</td>
+	    <td class="champ">{{ customer.company.plan }}</td>      
+	  </tr>   	 
+
+	  {% if customer.company.plan == 'trial' %}	  
+	  <tr>
+	    <td class="attribut">{{ 'company.endTrial'|trans }}</td>
+	    <td class="champ">{{ customer.company.dateNextPlan|date('d/m/Y') }}</td>      
+	  </tr>  	  	  	  		
+  	 {% elseif customer.company.plan == 'trialEnded' %}
+	  <tr>
+	    <td class="attribut">{{ 'company.subscriptions'|trans }}</td>
+	    <td class="champ"><a role="menuitem" tabindex="-1" href="{{path('site_customer_core_subscribe')}}">{{ 'company.subscriptionsLink'|trans }}</a></td>      
+	  </tr>  	  
+	  {% elseif customer.company.plan == 'canceled' %}
+	  <tr>
+	    <td class="attribut">{{ 'company.subscriptions'|trans }}</td>
+	    <td class="champ">{{ 'company.subscriptionsLink'|trans }}</td>      
+	  </tr>  	    
+	  {% else %} {# Sinon, business, standard #}
+	  <tr>
+	    <td class="attribut">{{ 'company.credits'|trans }}</td>
+	    <td class="champ">{{ customer.company.creditsRemaining }} / {{ customer.company.creditsPerMonth}}</td>      
+	  </tr>   		  
+	  <tr>
+	    <td class="attribut">{{ 'company.dateNextPlan'|trans }}</td>
+	    <td class="champ">{{ customer.company.dateNextPlan|date('d/m/Y') }}</td>      
+	  </tr>	  	  
+		  {% if customer.company.plan != customer.company.nextPlan %}
+		  <tr>
+		    <td class="attribut">{{ 'company.nextPlan'|trans }}</td>
+		    <td class="champ">{{ customer.company.nextPlan }}</td>      
+		  </tr>
+		  {% endif %}		    
+	{% endif %}	
+	</table>              	
+</div>

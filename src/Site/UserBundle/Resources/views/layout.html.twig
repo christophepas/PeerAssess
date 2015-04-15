@@ -1,0 +1,32 @@
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+ <div id="wrapper-sidebarless" class="inactive">
+
+    <!-- Sidebar -->
+    {% block sidebar %}
+    {% endblock %}
+
+    <!-- Page content -->
+    <div id="page-content-wrapper">
+      {% block page_header %}
+      {% endblock %}
+
+      <div class="page-content" id="form-pages">
+        <div class="container">
+          <div class="row">
+            <div class=" col-xs-10 col-centered">
+              <a class="logo" href="{{ path('site_vitrine_core_homepage') }}">
+                <img src="{{ optipng('img/logo/logo-medium-bluebg.png') }}">
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-centered">
+            {% block content %}
+            {% endblock %}
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div>
+{% endblock %}

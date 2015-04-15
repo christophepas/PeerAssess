@@ -1,0 +1,15 @@
+site_supervisor_core_homepage:
+    path:     /
+    defaults: { _controller: "SiteSupervisorBundle:Core:dashboard" }
+
+site_supervisor_core_settings:
+   path: /settings/
+   defaults: { _controller: "SiteSupervisorBundle:Core:settings" }
+
+site_supervisor_core_subscribe:
+    path: /subscribe/{newPlan}
+    defaults: {_controller:"SiteSupervisorBundle:Core:subscribe", newPlan: ''}
+
+site_supervisor_core_cancel-subscribe:
+    path: /cancel-subscription
+    defaults: {_controller:"SiteSupervisorBundle:Core:cancelSubscription"}

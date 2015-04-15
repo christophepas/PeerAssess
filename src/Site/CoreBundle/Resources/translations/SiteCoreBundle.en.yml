@@ -1,0 +1,10 @@
+common:
+    close: close
+    cancel: cancel
+    send: send
+switchLanguage: Version française
+support:
+    title: Got a question ?
+    content: We are available to answer your questions.
+    tel: +33 6 61 32 18 44
+    mail: support@peerassess.co

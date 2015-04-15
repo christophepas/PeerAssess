@@ -1,0 +1,81 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block page_title %}{{ 'pageTitle.settings'|trans }}{% endblock %}
+
+{% block id_content %}settings{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="informations">
+        <div class="dropdown pull-right settings">
+          <div class="btn dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+            <span class="icon icon-ellipsis"></span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1" href="#" id="edit-profile"><span class="icon icon-pencil"></span>{{ 'common.edit'|trans }}</a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1" href="#" id="change-password"><span class="icon icon-lock"></span>{{ 'profile.changePassword'|trans }}</a>
+            </li>
+          </ul>
+        </div>
+      {% block profile_content %}
+        {{ render(controller('FOSUserBundle:Profile:show')) }}
+        {#
+        {{ render(controller('FOSUserBundle:Profile:edit')) }}
+        #}
+        {{ render(controller('FOSUserBundle:ChangePassword:changePassword')) }}
+      {% endblock profile_content %}
+      </div>
+    </div>
+    {#
+    <div class="col-xs-12 col-sm-6">
+      <div class="informations">
+        <div class="dropdown pull-right settings">
+          <div class="btn dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown">
+            <span class="icon icon-ellipsis"></span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu2">
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1" href="#" id="edit-company"><span class="icon icon-image2"></span>{{ 'company.changePicture'|trans }}</a>
+            </li>
+            <li>
+              <a role="menuitem" tabindex="-1" href="{{path('site_supervisor_core_subscribe')}}"><span class="icon icon-credit"></span>{{ 'company.changePlan'|trans }}</a>
+            </li>
+          </ul>
+        </div>
+        {{ render(controller('SiteUserBundle:Company:show')) }}
+        {{ render(controller('SiteUserBundle:Company:edit')) }}
+      </div>
+    </div>
+    #}
+  </div>
+{% endblock content %}
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+$('#edit-profile').click(function(){
+  $('.fos_user').hide();
+  $('.fos_user_user_edit').fadeIn();
+});
+$('#change-password').click(function(){
+  $('.fos_user').hide();
+  $('.fos_user_change_password').fadeIn();
+});
+$('.show-profile').click(function(){
+  $('.fos_user').hide();
+  $('.fos_user_user_show').fadeIn();
+});
+$('#edit-company').click(function(){
+  $('.company').hide();
+  $('.company_edit').fadeIn();
+});
+$('#show-company').click(function(){
+  $('.company').hide();
+  $('.company_show').fadeIn();
+});
+</script>
+{% endblock javascript %}

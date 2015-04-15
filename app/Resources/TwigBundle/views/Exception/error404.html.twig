@@ -1,0 +1,9 @@
+{% extends "SiteUserBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="text">
+  <h1>Erreur 404</h1>
+  <h2>La page demandée est introuvable</h2>
+  <p>Vous tentez d'accéder à une URL inexistante. Vous pouvez <a href="mailto:contact@peerassess.co">nous le signaler</a> ou bien <a href="{{ path('site_vitrine_core_homepage') }}">revenir à l'accueil</a>.</p>
+</div>
+{% endblock content %}

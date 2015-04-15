@@ -1,0 +1,64 @@
+{% extends '::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block title %}Peerassess{% endblock %}
+
+{% block sidebar %}
+	{% include 'SiteSupervisorBundle:Utils:sidebar_supervisor.html.twig' %}
+{% endblock sidebar %}
+
+{% block modal %}
+	{% if is_granted('ROLE_ADMIN') %}
+		{{ render(controller('SiteSupervisorBundle:Core:switch')) }}
+	{% endif %}
+	{% include 'SiteCoreBundle:Utils:support.html.twig' %}
+{% endblock modal %}
+
+{% block logged %}
+	<span class="profil">
+		<table>
+			<tr class="semi-header">
+				<td class="name">
+					<a href="{{ path('site_supervisor_core_settings') }}">{{ app.user.username }}</a>
+					{% if is_granted('ROLE_ADMIN') and not is_granted('ROLE_PREVIOUS_ADMIN') %}
+						<a href="#switch" role="button" data-toggle="modal"><span class="icon icon-eye"></span> Se connecter en tant que...</a>
+					{% endif %}
+					{% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+						<a href="{{ path('site_supervisor_core_homepage', {'_switch_user':'_exit'}) }}"><span class="glyphicon glyphicon-off"></span> Retour à l'utilisateur d'origine</a>
+					{% endif %}
+				</td>
+				<td rowspan="2">
+					<a href="{{ path('site_supervisor_core_settings') }}">
+						{% if app.user.image is not null %}
+							<img src="{{ app.user.image.url }}" class="img-circle"/>
+						{% else %}
+							<img src="{{ asset('img/icon/user.svg') }}" class="img-circle"/>
+						{% endif %}
+					</a>
+				</td>
+			</tr>
+			<tr class="semi-header">
+				<td class="logout">
+					<a href="{{ path('fos_user_security_logout') }}">{{ 'common.logout'|trans }} <span class="icon icon-logout"></span></a>
+				</td>
+			</tr>
+		</table>
+	</span>
+{% endblock logged %}
+
+{% block container %}
+	<div class="page-content container-fluid" id="{% block id_content %}{% endblock %}">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 m-b">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+	{% block tableSorter %}
+	{% endblock tableSorter%}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'SiteCandidateBundle::layout.html.twig' %} 
+
+{% block content %}
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content" id="end">
+  <div class="container">
+    <div class="row">
+      <div class="col-centered col-xs-12 col-sm-10 col-md-8">
+        <div class="message">
+          <h1>Session de test en attente</h1>
+          <p>Votre session de test n'a pas encore commencé. Vous pourrez la démarrer en accédant à cette URL le
+            {{ evaluationSession.scheduledDate|date('d/m/Y à H:i') }}.</p>
+          <!-- <a
+            href="http://www.google.com/calendar/event?action=TEMPLATE&text=Test de compétences&dates=[start-customformat='Ymd\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:"
+            class="btn btn-style  btn-style-30px  btn-success"> <span class="left"> <span
+              class="glyphicon glyphicon-calendar circle"></span>&nbsp;&nbsp;Ajouter à mon
+              calendrier
+          </span> &nbsp;
+          </a>  -->
+          <a href="http://twitter.com/peerassessrh" class="btn btn-main  btn-primary"> <img
+            src="{{ asset('img/icon/twitter.svg') }}">Suivre Peerassess sur twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}

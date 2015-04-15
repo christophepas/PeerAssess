@@ -1,0 +1,133 @@
+
+#resultat{
+	.resumeSession{
+		.table-score{
+			width: 100%;
+			.titre{
+				color: @gray-light;
+				font-weight: 300;
+				.icon{
+					padding-right: 20px;
+				}
+			}
+			.score{
+				// padding-left: 20px;
+				width: 100%;
+			}
+			.progress{
+				margin: 0px;
+			}
+		}
+	  td{
+	    font-size: 17px;
+	    background-color: transparent;
+	    font-weight: 400;
+	    padding: 2px 10px;
+	    color: @brand-primary;
+	  }
+	  th{
+	    color: @gray-light;
+	    background-color: transparent;
+	    font-size: @font-size-small;
+	    font-weight: 300;
+	  }
+	}
+	.exercice{
+		display: none;
+		h2{
+			font-weight: 400;
+			font-size: 25px;
+		}
+
+		.instructions{
+			p{
+				margin-top: 30px;
+				font-size: 14px;
+			}
+			h4{
+				margin-top: 30px;
+				font-weight: 600;
+				font-size: 15px;
+				margin-bottom: 0px;
+			}
+			table{
+				margin-top: 0px;
+				width: 100%;
+				th{
+					color: white;
+				}
+				th,td{
+					padding-left: 15px;
+					padding-right: 15px;
+					padding-top: 8px;
+					padding-bottom: 8px;
+					border: 1px solid #ddd;
+					vertical-align: middle;
+					width: 50%;
+				}
+			}
+		}//fin instructions
+		.score{
+			margin-right: 20px;
+			.table-score{
+				.titre{
+					padding-right: 10px;
+				}
+			}
+		}
+
+		.code {
+			.nav-tabs{
+				margin-top: 30px;
+				border-bottom: 1px solid @gray-lighter;
+				background-color: transparent;
+				padding-left: 0px;
+				> li {
+					> a {
+						background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,0));
+						background-color: white;
+						border: 1px solid @gray-lighter;
+						color: @gray-light;
+						&:hover {
+							color: @brand-primary;
+						}
+					}
+					&.active > a {
+						color: @brand-primary;
+						&,
+						&:hover,
+						&:focus {
+							background-color: white;
+							border: 1px solid @gray-lighter;
+							border-bottom-color: transparent;
+						}
+					}
+				}
+			}//fin navtabs code
+
+			.content{
+				margin-top: 20px;
+				textarea{
+					width: 100%;
+					border: 1px solid @gray-lighter;
+					min-height: 300px;
+				}
+			}
+
+			.correction{
+				.ligne{
+					color: @brand-primary-light;
+				}
+				.analyse{
+					text-align: left;
+					padding-left: 20px;
+				}
+			}
+
+		}//fin code
+
+	}//fin exercice
+	.exercice.active{
+		display: block;
+	}
+}

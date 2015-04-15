@@ -1,0 +1,42 @@
+entity:
+    user:
+        firstName: First Name
+        lastName: Last Name
+    type:
+        candidate: candidate
+        supervisor: supervisor
+    customer:
+        company: Company
+
+form:
+    signUp: sign up
+    signIn: sign in
+    registration:
+        submit: Ask Access
+    edit:
+        submit: Confirm modifications
+    alreadyRegistered: Already registered ?
+    notAlreadyRegistered: Haven't signed up yet ?
+    email: Email
+    password: Password
+    password_confirmation: Repeat password
+    github: GitHub connect (candidate)
+    youAre: you are
+
+"Bad credentials": "Invalid Email or password"
+
+security:
+    cancel: Cancel
+    login:
+        username: "Email:"
+    password:
+        change: "Change your password"
+
+resetting:
+    forgot: forgot your password ?
+    request:
+        invalid_username: The email address "%username%" does not exist.
+        username: "Email address:"
+    email:
+        subject: Your password is ready to be reset
+        message: Hello %username%, <br>In order to reset your password please follow <a href="%confirmationUrl%">this link</a>.

@@ -1,0 +1,14 @@
+services:
+    twig.extension.status:
+        class: Site\CandidateBundle\Twig\StatusExtension
+        tags:
+            - { name: twig.extension }
+    site_candidate.notification_mailer:
+        class: Site\CandidateBundle\Services\NotificationMailer
+        arguments: ["@mailer", "@templating",'@translator.default']
+
+    site_candidate.controller.evaluation_session:
+        class: Site\CandidateBundle\Controller\EvaluationSessionController
+        arguments: ["@peerassess_core.evaluation_session_manager", "@site_candidate.notification_mailer", "%nbCorrection%"]
+        calls:
+            - ["setContainer", ["@service_container"]]

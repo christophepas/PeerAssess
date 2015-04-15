@@ -1,0 +1,28 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+
+{% block page_title %}{{ 'pageTitle.testList'|trans }}{% endblock %}
+
+{% block id_content %}subjectList{% endblock %}
+
+{% block content %}
+<a href="{{path('test_create')}}" class="btn btn-main">
+	{{'test.new'|trans}}
+</a>
+<table class="table-dashboard tablesorter m-t">
+	<tbody>
+	{% for test in tests %}
+		<tr>
+			<td>
+				<a href="{{path('test_show',{'testId':test.id})}}">
+					{{ test.name }}
+				</a>
+			</td>
+			<td>
+				{{test.shortDescription}}
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% endblock content %}

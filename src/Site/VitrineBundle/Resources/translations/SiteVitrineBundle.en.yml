@@ -1,0 +1,101 @@
+appAccess: Application
+common:
+    goOn: Go on
+    cancel: Cancel
+    send: Send
+    close: Close
+layout:
+    meta:
+        description: Peerassess is the first peer assessment tool, making the candidates work on real project and grade each other.
+    menu:
+        home: Home
+        presentation: Presentation
+        features: Features
+        appAccess: Application
+        signIn: Sign in
+    footer:
+        informations: Information
+        faq: FAQ
+        team: About us
+        contact: Contact
+        email: email
+        subscribe: Subscribe
+        legal2: Peerassess 2015
+        changeLanguage: Version française
+company:
+    home:
+        punchline: Discover an <span class="insist">amazing assessment tool</span>
+        subPunchline: PeerAssess is the first peer assessment platform. It's also free and open-source.
+        alreadyConnected: You are already connected
+        askAccess: Request access
+        passForgot: Forgot your password?
+        connexion:
+            signIn: Sign in
+        inscription:
+            alreadySigned: Already signed up?
+        reset:
+            sentTitle: New password
+            sentMessage: Your new password is registered and ready to use
+    presentation:
+        avantage1:
+            title: <span class="insist">Real conditions</span> assessments.
+            text: Whatever you want to test your candidates on, peer assessment lets them <span class="insist">work on real projects</span>, with all the tools they want.
+        avantage2:
+            title: <span class="insist">Create your tests</span>.
+            text: You can either choose a test subject from the common library, or <span class="insist">easily build your own and invite candidates to take it</span>.
+        avantage3:
+            title: <span class='insist'>Clear</span> results.
+            text: Peer assessement gives a clear score without bothering a teacher or an expert. Plus, you get details from each candidate on why they graded the work this way and how it could have been improved.
+    features:
+        title1: Real conditions
+        content1: Unlike MCQ, written tests, or even browser-based tests, the candidates can <span class="insist">work on real projects, with their tools</span>.
+        title2: Remote 
+        content2: PeerAssess can be used <span class="insist">remotely</span>, so that the candidates can take their tests when they're ready and in a peaceful environement.
+        title3: Comprehensible reports
+        content3: The reports allow any supervisor to <span class="insist">easily analyze candidates' results</span> and to go deeper in the files submited by the candidate.
+        title4: Grading each other
+        content4: Peer assessment ask the candidates to grade 3 others, giving both an excellent vision of their skills and of their critical minds.
+        title5: Stop wasting your time
+        content5: Let <span class="insist">the teachers and experts focus on their real job</span> while giving a more pedagogical test to the candidate.
+    end:
+        openSource: PeerAssess is an open-source project. If you want to contribute, please check our
+homepage:
+    buttons:
+        more: Learn more
+        signup: Sign up
+        callToAction: Let's get started !
+contact:
+    contactUs: Contact us.
+    sendMail: Send us an email
+    callUs: Call us
+    writeUs: Or write to us
+    form: Contact Form
+    firstname: First name
+    lastname: Last name
+    email: Email
+    company: Company
+    yourMessage: Your message
+    send: Send
+team:
+    title: Team
+faq:
+    text:
+        part1: If you have questions that are not answered here, please
+        part2: contact us
+    question1: Who is this service made for?
+    answer1: Peerassess is a solution made for any company needing to recruit in the IT field. The candidateeloper selection process is extremely expensive in time, wether it's done by the CTOs of small businesses or a supervisor at a big multinational. Our tool automates the evaluation of technical skills, simplifying their tasks and helping them save time!
+    question2: Why are the tests in "real conditions"?
+    answer2: Unlike multiple choice or theoretical tests, we offer a tool evaluating the applicant by looking at the code he actually produced while having access to his usual work resources. This allows to go further than a simple theoretical test and assess the real abilities of the applicant.
+    question3: When will other testing languages be available?
+    answer3:
+        part1: Peerassess is already fully available to test Java, Python and PHP skills and we are candidateelopping the platform for other languages; please feel free to
+        part2: let us know about your needs.
+    question4: What are the usage fees ?
+    answer4:
+        part1: The assessment tool is entirely free right now and intends to stay that way.
+    question5: How can I try the service?
+    answer5: You can create an account right now from the homepage and send your first invites to applicants !
+    question6: Does your service require an installation?
+    answer6:  Peerassess is a tool fully accessible via internet and therefore requires no installation.
+    question7: Will I get the updates of your service?
+    answer7: The updates will be directly added to the service and you will be notified by email when new features are available.

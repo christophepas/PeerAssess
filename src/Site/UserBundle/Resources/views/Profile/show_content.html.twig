@@ -1,0 +1,18 @@
+{% trans_default_domain 'SiteCustomerBundle' %}
+
+<div class="fos_user_user_show fos_user">
+	<table>
+	  {#<tr>
+	    <td class="attribut">{{ 'common.firstName'|trans }}</td>
+	    <td class="champ">{{ user.firstName }}</td>                               
+	  </tr>	      
+	  <tr>
+	    <td class="attribut">{{ 'common.name'|trans }}</td>
+	    <td class="champ">{{ user.lastName }}</td>   
+	  </tr>#}     
+	  <tr>
+	    <td class="attribut">{{ 'common.mail'|trans }}</td>
+	    <td class="champ">{{ user.email }}</td>        
+	  </tr>                                                     
+	</table>    	
+</div>

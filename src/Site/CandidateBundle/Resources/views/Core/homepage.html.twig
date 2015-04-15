@@ -1,0 +1,80 @@
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+
+{% trans_default_domain 'SiteCandidateBundle' %}
+
+{% block title %}Peerassess{% endblock %}
+
+{% block page_title %}
+	Bienvenue
+{% endblock %}
+
+{% block container %}
+	<div class="container">
+		<div class="row">
+			<div class=" col-xs-12 col-sm-10 col-sm-offset-1">
+				<div class="card padder padder-v m-t-lg">
+					<h1>{{ 'welcome.title'|trans }}</h1>
+					<p>{{ 'welcome.content'|trans }}</p>
+				</div>
+				{% block content %}
+					<table  class="table-dashboard m-t">
+						{% if invites|length > 0 %}
+							<thead class="line1">
+								<th class="text-lg insist c-primary">Invites</th>
+								<th>Language</th>
+								<th>Scheduled date</th>
+								<th>Length</th>
+							</thead>
+							{% for i in invites %}
+								<tr>
+									<td>
+										<a href="{{ path('site_candidate_invite_claim', {'id': i.id}) }}">Invite {{ i.id }}</a>
+									</td>
+									<td>{{ i.evaluation.test.language|language}}</td>
+									<td>{{ i.scheduledDate|date }}</td>
+									<td class="duration">{{i.evaluation.test.duration }}</td>
+								</tr>
+							{% endfor %}
+						{% endif %}
+						{% if sessions|length > 0 %}
+							<thead class="line1">
+								<th class="text-lg insist c-primary">Sessions</th>
+								<th>Language</th>
+								<th>Scheduled date</th>
+								<th>Length</th>
+							</thead>
+							{% for s in sessions %}
+								<tr>
+									<td>
+										<a href="{{ path('site_candidate_evaluation-session_test', {'token': s.token}) }}">Session {{ s.evaluation.name }}</a>
+									</td>
+									<td>{{ s.evaluation.test.language|language}}</td>
+									<td>{{ s.scheduledDate|date }}</td>
+									<td class="duration">{{ s.evaluation.test.duration }}</td>
+								</tr>
+							{% endfor %}
+						{% endif %}
+					</table>
+				{% endblock content %}
+			</div>
+		</div>
+	</div>
+{% endblock container %}
+
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+  $(document).ready(function()
+      {
+				$('.duration').each(function() {
+					var totalSec = parseInt($(this).html());
+					var hours = parseInt( totalSec / 3600 ) % 24;
+					var minutes = parseInt( totalSec / 60 ) % 60;
+					var result = (hours < 10 ? "0" + hours : hours) + "h " + (minutes < 10 ? "0" + minutes : minutes) + "min";
+					$(this).html(result);
+				});
+      }
+  );
+</script>
+{% endblock javascript %}

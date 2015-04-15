@@ -1,0 +1,64 @@
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% if invites is empty %}
+	<tbody>
+		<tr class="no-line">
+			<td class="empty">{{ 'evaluationSession.table.noCandidate'|trans }}</td>
+		</tr>
+	</tbody>
+{% else %}
+	<thead>
+		<th>
+		{% if status is defined and  tableTitre is defined %}
+			<a class="title" href="{{ path('site_supervisor_evaluation-session_list', {'status': status}) }}">{{tableTitre}}</a>
+		{% else %}
+			{{ 'common.candidate'|trans }}
+		{% endif %}
+		</th>
+		<th class="th-language">{{ 'common.language'|trans }}</th>
+		<th class="th-test">{{ 'common.test'|trans }}</th>
+		<th class="th-date">{{ 'common.date'|trans }}</th>
+		<th class="disabledSorter th-resultat">{{ 'common.result'|trans }}</th>
+		<th class="th-delete"></th>
+	</thead>
+	<tbody>
+	{% for invite in invites %}
+		<tr>
+			<td><a href={{ (invite.evaluationSession) ? path('site_supervisor_evaluation-session_show',{'id':invite.evaluationSession.id}):"#" }}>{{ invite.email }}</a></td>
+			<td>{{ invite.evaluation.test.language|language }}</td>
+			<td><a href="{{ path('site_supervisor_evaluation_show', {'id': invite.evaluation.id}) }}">{{ invite.evaluation }}</a></td>
+			<td>{{ invite.scheduledDate|date('d/m/Y H:i') }}</td>
+			<td>
+			{# Status and link to the session view if the invite has been accepted #}
+			{% if invite.evaluationSession is empty %}
+				<span>Not accepted yet</span>
+			{% else %}
+				<a class="full-width" href="{{path("site_supervisor_evaluation-session_show",{'id':invite.evaluationSession.id})}}">
+				{% if invite.evaluationSession is closed and invite.evaluationSession.globalScore != -1 %}
+					{% set value = (invite.evaluationSession.globalScore * 100)|number_format(0)  %}
+					<div class="progress progress-global-small">
+						<div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+							<span class="pourcentage">{{ value|number_format(0) }}%</span>
+						</div>
+					</div>
+				{% elseif invite.evaluationSession is created %}
+					{{ 'evaluationSession.status.created'|trans }}
+				{% elseif invite.evaluationSession is running %}
+					{{ 'evaluationSession.status.running'|trans }}
+				{% elseif invite.evaluationSession is waitingToCorrect %}
+					{{ 'evaluationSession.status.waitingToCorrect'|trans }}
+				{% elseif invite.evaluationSession is correcting %}
+					{{ 'evaluationSession.status.correcting'|trans }}
+				{% else %}
+				-
+				{% endif %}
+				</a>
+			{% endif %}
+			</td>
+			<td>
+				<a class="c-info pointer" data-toggle="modal" data-target="#delete-modal-{{invite.id}}"><span  class="icon icon-box-add"></span></a>
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+{% endif %}

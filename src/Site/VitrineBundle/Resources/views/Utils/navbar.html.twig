@@ -1,0 +1,61 @@
+{% trans_default_domain 'SiteVitrineBundle' %}
+
+<header id="header" class="header-hide" >
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ path("site_vitrine_core_company") }}">
+          <img class="logo logo-show" src="{{ optipng('img/logo/logo-small-whitebg.png') }}" alt="logo blanc">
+          <img class="logo logo-hide" src="{{ optipng('img/logo/logo-small-bluebg.png') }}" alt="logo bleu">
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        {#
+        <ul class="nav navbar-nav navbar-center">
+          <li><a href="{{ path("site_vitrine_core_company") }}#presentation">{{ 'layout.menu.presentation'|trans }}</a></li>
+          <li><a href="{{ path("site_vitrine_core_company") }}#langages">{{ 'layout.menu.languages'|trans }}</a></li>
+          <li><a href="{{ path("site_vitrine_core_company") }}#features">{{ 'layout.menu.features'|trans }}</a></li>
+        </ul>
+        #}
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            {% include "SiteCoreBundle:Utils:switch_locale.html.twig" %}
+          </li>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {% if is_granted('ROLE_SUPERVISOR') %}
+            <li>
+              <a href="{{ path("site_supervisor_core_homepage") }}" class="btn btn-dashboard">
+                <span class="icon icon-home"></span>&nbsp;&nbsp;{{ 'appAccess'|trans }}
+              </a>
+            </li>
+            {% endif %}
+            {% if is_granted('ROLE_CANDIDATE') %}
+            <li>
+              <a href="{{ path("site_candidate_core_homepage") }}" class="btn btn-dashboard">
+                <span class="icon icon-home"></span>&nbsp;&nbsp;{{ 'appAccess'|trans }}
+              </a>
+            </li>
+            {% endif %}
+          {% else %}
+            <li>
+              <a href="{{ path('fos_user_security_login') }}" class="btn btn-connexion">
+                <span class="icon icon-lock2"></span>&nbsp;&nbsp;{{ 'layout.menu.signIn'|trans }}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>

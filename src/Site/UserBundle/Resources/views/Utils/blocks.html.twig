@@ -1,0 +1,23 @@
+{% use 'form_div_layout.html.twig' with form_widget_simple as base_form_widget_simple %}
+{% use 'form_div_layout.html.twig' with form_row as base_form_row %}
+
+{% block form_widget_simple %}
+  {% set type = type|default('text') %}
+  {% if attr.class is not defined %}
+    {% set attr = attr|merge({'class': 'milieu'}) %}
+	{% if type != "hidden" %}
+      {% set attr = attr|merge({'placeholder': label}) %}
+    {% endif %}
+  {% endif %}
+  {{ block('base_form_widget_simple') }}
+{% endblock %}
+
+
+{% block form_row %}
+{% spaceless %}
+    <div>
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}

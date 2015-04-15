@@ -1,0 +1,63 @@
+<script type="text/javascript">
+
+//si il n'y a pas eu d'ajout de lignes, empêcher la soumission et affichetr le tooltip "ajouter une candidat avant d'enregistrer"
+$(function() {
+	$(document).on("submit", "#add-form", function (e) {
+		//Si la classe "newSession" n'existe pas
+		if (!$(".newSession")[0]){
+			$('#next').tooltip('show');
+			return false;
+		}
+	});
+});
+
+$(function(){
+	// create a new line (nb = id of line)
+	var nb = 0;
+	$('#next').click(function(e){
+		var evaluationField = $('#default_evaluation');
+		var dateField = $('#default_date');
+		var timeField = $('#default_time');
+		var emailField = $('#default_email');
+		var errorBlock = $('#errorBlock');
+		// remove previous help-block
+		errorBlock.empty().fadeOut(200);
+
+		// check error in data
+		var error = false;
+		if(!emailField.val().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm)){
+			var $alert = $("<div class='alert alert-warning'/>").html('{{ 'evaluationSession.add.errorMail'|trans }}');
+			errorBlock.append($alert).fadeIn(200);
+			error = true;
+		}
+
+		// create a line if no error
+		if(!error)
+		{
+				var prototype = $('#default_line').attr('data-prototype');
+				console.log(prototype);
+				var newForm = prototype.replace(/__name__/g, nb);
+				console.log(newForm);
+				var newFormTr = $('<tr class="newSession"></tr>').append(newForm);
+				$('.tableAddSession').append(newFormTr);
+				$('#site_candidatebundle_evaluation_sessions_evaluationSessions_' + nb + '_candidate_email').val(
+					emailField.val()
+				);
+				emailField.val('');
+				$('#site_candidatebundle_evaluation_sessions_evaluationSessions_' + nb + '_evaluation').val(evaluationField.val());
+				evaluationField.val($("#default_evaluation option:first").val());
+				$('#site_candidatebundle_evaluation_sessions_evaluationSessions_' + nb + '_scheduledDate_date').val(dateField.val());
+				dateField.val('{{"now"|date('Y-m-d')}}');
+				$('#site_candidatebundle_evaluation_sessions_evaluationSessions_' + nb + '_scheduledDate_time').val(timeField.val());
+				timeField.val('{{"now"|date('H:i')}}');
+				nb++;
+
+				$('.remove-line').click(function()
+				{
+					$(this).parent().parent().remove();
+					nb--;
+				});
+		}
+	});
+});
+</script>

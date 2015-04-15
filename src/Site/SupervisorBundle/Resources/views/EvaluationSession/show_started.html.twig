@@ -1,0 +1,9 @@
+{% extends 'SiteSupervisorBundle:EvaluationSession:show_layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+{% block page_title %}{{ 'pageTitle.showStarted'|trans }}{% endblock %}
+{% block summary %}
+<div class="lien-test">
+   <p>{{ 'evaluationSession.showStarted.content'|trans }} :</p>
+    <a  class="btn btn-info" target="_blank" href="{{ path('site_candidate_evaluation-session_test', {'token': evaluationSession.token}) }}">{{ url('site_candidate_evaluation-session_test', {'token': evaluationSession.token}) }}</a>
+</div>
+ {% endblock summary %}

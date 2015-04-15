@@ -1,0 +1,18 @@
+{% trans_default_domain 'SiteVitrineBundle' %}
+
+<section id="home" class="container waypoint" data-animate-down="header-show" data-animate-up="header-hide">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 text-center">
+      <div  id="punchline" class="fadeElt">
+        <h1>{{ 'company.home.punchline'|trans |raw}}</h1>
+        <h3>{{ 'company.home.subPunchline'|trans |raw }}</h3>
+        <div  class="section-border m-t-lg" >
+          <a class="btn btn-main-s btn-lg btn-inscription" href="{{ path('fos_user_registration_register') }}">
+            <span class="icon icon-rocket"></span>
+            &nbsp;&nbsp;{{ 'homepage.buttons.callToAction'|trans }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

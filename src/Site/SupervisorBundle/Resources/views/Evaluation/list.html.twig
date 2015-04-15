@@ -1,0 +1,68 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block page_title %}{{ 'pageTitle.testList'|trans }}{% endblock %}
+
+{% block content %}
+<div id="modeles">
+  <a href="{{ path('site_supervisor_evaluation_add') }}" class="btn btn-primary btn-main">{{ 'common.newTest'|trans }}</a>
+  <table class="table-dashboard tablesorter">
+    <thead>
+      <tr>
+        <th>{{ 'common.test'|trans }}</th>
+        <th>{{ 'common.language'|trans }}</th>
+        <th>{{ 'common.average'|trans }}</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for evaluation in evaluations %}
+        <tr>
+          <td><a href="{{ path('site_supervisor_evaluation-session_add-single', {'id': evaluation.id}) }}">{{ evaluation }}</a></td>
+          <td>{{ evaluation.test.language|language }}</td>
+          {% if evaluation.average > 0 %}
+          {% set value = evaluation.average *100 %}
+          <td>
+						<div class="progress progress-global-small">
+							<div class="progress-bar" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ value }}%">
+								<span class="pourcentage">{{ value|number_format(0) }}%</span>
+							</div>
+						</div>
+          </td>
+          {% else %}
+          <td>{{ 'evaluation.list.waitingScore'|trans }}</td>
+          {% endif %}
+          <td><a href="{{ path('site_supervisor_evaluation-session_add-single', {'id': evaluation.id}) }}"><span  class="icon icon-user-add"></span></a></td>
+          <td><div class="danger" data-toggle="modal" data-target="#delete-modal-{{evaluation.id}}"><span  class="icon icon-trash3"></span></div></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+
+{% block modal %}
+  {{ parent() }}
+  {% include 'SiteSupervisorBundle:Evaluation:Delete/delete.html.twig' %}
+{% endblock modal %}
+
+
+{% block tableSorter %}
+	<script type="text/javascript" src="{{ asset('js/jquery.tablesorter.js') }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function()
+      {
+        $(".table-dashboard").tablesorter({
+          sortList: [[0,0]],
+          dateFormat: 'uk',
+          headers : {
+            3 : { sorter : false},
+            4 : { sorter : false}
+          }
+        });
+      }
+    );
+  </script>
+{% endblock tableSorter%}
+

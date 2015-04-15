@@ -1,0 +1,14 @@
+{% extends 'SiteCoreBundle:Utils:layout_mail.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+{% autoescape false %}
+{{ 'registration.email.subject'|trans({'%username%': user, '%confirmationUrl%': confirmationUrl}) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block message %}
+    <h1 style="color:#5d6367;">Bonjour {{ user }} !</h1>
+    <p style="text-align:justify; color:#5d6367;  font-size:18px;">
+    	Votre compte d'utilisateur est prêt. Pour finaliser sa création, merci de vous rendre à <a href="{{ confirmationUrl }}" target="_blank">cette adresse</a> .
+{% endblock %}        

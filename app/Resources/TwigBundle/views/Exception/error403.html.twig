@@ -1,0 +1,12 @@
+{% extends "SiteUserBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="text">
+  <h1>Erreur 403</h1>
+  <h2>Vous n'avez pas les droits nécessaires</h2>
+  <p>Droits insuffisants<br>
+    <a href="{{ path('site_vitrine_core_homepage') }}">revenir à l'accueil</a>
+  </p>        
+</div> 
+{% endblock content %}
+

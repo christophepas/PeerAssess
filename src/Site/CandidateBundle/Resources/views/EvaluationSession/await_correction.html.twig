@@ -1,0 +1,14 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="card-pad">
+	<div class="message text-center">
+		<h1>{{ 'correction.await.title'|trans }}</h1>
+		<p>
+			{{ 'correction.await.text'|trans }}
+		</p>
+	</div>
+</div>
+{% endblock content %}

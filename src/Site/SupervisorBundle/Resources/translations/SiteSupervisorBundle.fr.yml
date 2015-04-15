@@ -1,0 +1,252 @@
+common:
+    logout: Déconnexion
+    dashboard: Dashboard
+    candidate: Candidat
+    candidates: Candidats
+    test: Test
+    tests: Tests
+    subjects: Sujets de test
+    settings: Paramètres
+    guide: Guide
+    name: Nom
+    firstName: Prénom
+    company: Société
+    image: Image
+    mail: Mail
+    save: Enregistrer
+    cancel: Annuler
+    delete: Supprimer
+    newCandidate: Nouveau candidat
+    newTest: Nouveau test
+    feedback: Feedback
+    language: Langage
+    languages: Langages
+    date: Date
+    hour: Heure
+    add: Ajouter
+    remove: Retirer
+    average: Moyenne
+    skill: Compétence
+    level: Difficulté
+    score: Score
+    status: Statut
+    result: Résultat
+    speed: Rapidité
+    recent: Récent
+    onHold: En attente
+    running: En cours
+    edit: Modifier
+    by: par
+footer:
+    copyrights: TOUS DROITS RÉSERVÉS
+    support: assistance
+pageTitle:
+    dashboard: Dashboard
+    showClosed: Résultat de test
+    showStarted: Test en cours
+    settings: Paramètres
+    testShow: Fiche de test
+    testList: Vos tests
+    testAdd: Nouveau test
+    sessionList: Tous vos candidats
+    subjectAdd: Créer un sujet de test
+    subjectList: Vos sujets de test
+dashboard:
+    finishedSessions: Dernières sessions finies
+    unclaimedInvites: Ces tests n'ont pas été passé à temps
+profile:
+    mailTitle: Préférences des mails
+    descriptionNewsletter: En étant abonné à notre newsletter, vous restez au courant de nos avancées et des différentes étapes de la croissance de Peerassess.
+    descriptionAlphaletter: Cette lettre d'information reservée aux utilisateurs de l'alpha vous permettra d'être tenu(e) au courant très régulièrement des évolutions du produit.
+    changePassword: Changer le mot de passe
+test:
+    new: créer un sujet de test
+    create:
+        name: Titre de votre test
+        shortDescription: Description du test (~140 caractères)...
+        readMe: Instructions pour le travail. Exemple :
+    createScheme:
+        title: Titre de la correction
+        introduction: Explications plus poussées pour bien corriger...
+        sectionDetails: Une section regroupe plusieurs notes portant sur un aspect similaire du test. Chaque note a trois niveaux : mauvais, ok ou bien.
+        gradetitle: Titre de la section
+        gradeintroduction: Détails sur cette section...
+        gradename:  Nom de la note
+        addsections: Ajouter une section
+        addgrades: Ajouter une note
+        removeSection: Supprimer la section
+        removeGrade: Supprimer la note
+evaluation:
+    add:
+        language:
+            title: Sur quelle technologie souhaitez-vous tester vos candidats ?
+        test:
+            title: Choix du sujet
+        name:
+            title: Nommez le test
+        generate: Générer le test
+        fastCreation: Création rapide
+        advancedCreation: Création avancée
+        levels: Niveaux
+        problems: Exercices
+        problemName: Nom de l'exercice
+        level: Difficulté
+        duration: Durée
+        totalDuration: Durée totale
+        quick:
+            know-how: Savoir-faire
+        success: Le test a bien été créé
+    delete:
+        title: Suppression du sujet
+        content: Vous êtes sur le point de supprimer le sujet
+        content2: ainsi que toutes les sessions qui ont été passées sur celui-ci.
+        submit: Confirmer la suppression
+    list:
+        waitingScore: -
+    show:
+        average: Score moyen
+evaluationSession:
+    add:
+        placeholder:
+            emails: Entrez ici les addresses emails des candidats...
+        noEvaluation: Veuillez créer un test pour ajouter un candidat.
+        invite: Invitation
+        errorName: Nom obligatoire
+        errorFirstName: Prénom obligatoire
+        errorMail: Adresse email invalide
+        errorSendMail: Entrez une adresse pour envoyer une invitation
+        send: envoyer les invitations
+        success: Le candidat a bien été ajouté
+        successes: Les candidats ont bien été ajoutés
+        warning: Il est conseillé de faire passer au moins 4 candidats par test pour avoir des résultats.
+    delete:
+        title: Suppression de session
+        content: Vous êtes sur le point d'annuler la session
+        submit: Confirmer la suppression
+        success: La session de %email% a bien été annulée.
+    archive:
+        title: Archivage de session
+        content: Vous êtes sur le point d'archiver la session
+        submit: Confirmer
+        success: La session de %email% a bien été archivée.
+    list:
+        title: Vos candidats
+    showClosed:
+        details: Détails
+        file: Télécharger le résultat
+    showStarted:
+        content: Le candidat peut accéder au test en suivant ce lien
+    table:
+        noCandidate: Aucun candidat
+    running:
+        instructions: Instructions
+        classes: Classes attendues
+        signatures: Signature des fonctions demandées
+        problemScore: Score sur l'exercice
+        candidateCode: Code du candidat
+    only1Test: le candidat n'a pas passé d'autre test
+    status:
+        notAccepted: En attente du candidat
+        created: Prêt à être lancé
+        running: Travail en cours
+        waitingToCorrect: En attente pour corriger
+        correcting: Corrections d'autres travaux
+guide:
+    general:
+        title: Bienvenue sur Peerassess
+        content: Cet outil est conçu pour vous accompagner dans vos recrutements en vous permettant d’évaluer facilement vos candidats sans nécessiter de compétences techniques de votre part.
+        content2: L’ensemble de l’interface est designé pour que vous puissiez facilement créer des tests, les faire passer à vos candidats et utiliser leur score pour évaluer leur niveau, notamment relativement à vos autres candidats.
+        content3: La navigation est facilité par la barre latérale vous permettant d’accéder aux principales fonctionnalités de la plateforme. Vous pouvez à tout moment la réduire.
+    dashboard:
+        title: Dashboard
+        content: Cette interface vous donne accès aux résultats des derniers candidats évalués, ainsi qu’une vision sur les prochains candidats qui vont pouvoir être évalués et sur ceux en cours d’évaluation.
+        button: Accéder au dashboard
+    tests:
+        title: Vos tests
+        content: Vous trouverez dans cet onglet l’ensemble des tests que vous avez pu créer. Un sujet de test correspond à un ensemble d’exercices que les candidats vont passer et sur lesquels ils vont être notés. Un même sujet peut être proposé à une multitude de candidats, afin de facilement pourvoir comparer leurs résultats.
+        content2: Chaque sujet a une fiche propre, vous donnant accès à différentes informations
+        list:
+            li: le score global moyen du test
+            li2: les candidats ayant passé le test
+            li3: le score global de chaque candidat
+            li4: une interface d’ajout de candidat pour ce test
+    candidates:
+        title: Fiche candidat
+        content: Cette interface vous montre vos candidats; vous pouvez facilement trier par test, score ou par la date.
+    newTest:
+        title: Créer un test
+        content: L’interface d’ajout de test est conçu pour vous permettre de créer des tests sans connaissances techniques. Elle se décline sous 2 formes : Un mode de création rapide et un mode de création avancé.
+        content2: Le mode de création rapide vous laisse choisir un langage, les savoir-faire qui doivent être évalués et le temps que les candidats auront pour terminer le test. Une fois nommé, Peerassess va automatiquement crée un test correspondant à ces paramètres.
+        content3: Le mode de création avancé vous laisse plus de choix quand aux exercices que les candidats passeront. Il vous permet de parcourir la bibliothèque de tests par language et par niveau et de sélectionner les exercices de votre choix.
+        button: Créer un test
+    newCandidate:
+        title: Ajouter un candidat
+        content: L’interface d’ajout de candidats vous laisse ajouter un ou plusieurs candidats, pour un ou plusieurs tests. Le formulaire d’ajout vous laisse entrer le nom, prénom et mail du candidat et choisir le test sur lequel il sera évalué ainsi que la date de sa session de passage.
+        content2: Enfin chaque candidat peut être invité par mail si vous voulez lui permettre de passer son test à distance.
+        button: Nouveau candidat
+    feedback:
+        title: Feedback
+        content: Un onglet de feedback est disponible en permanence dans l’application.  Peerassess se développe en permanence et nous avons besoin de vos retours pour avancer.
+        content2: Merci pour l’ensemble de vos commentaires, ils nous permettront de développer le produit qui réponde au mieux à vos besoins.
+company:
+    title: Changer d'abonnement
+    noImage: Aucune image
+    plan: Abonnement
+    credits: Tests restants
+    dateNextPlan: Prochaine date de facturation
+    nextPlan: Prochain abonnement
+    cancelPlan: Résilier mon abonnement
+    changePlan: Changer d'abonnement
+    changePicture: Changer l'image
+    subscriptions: Abonnement
+    subscriptionsLink: Changer d'offre
+subscribe:
+    changePlan: Changez ou résiliez votre abonnement à tout moment
+    perMonth: / mois
+    eco: Standard
+    business: Business
+    first: First
+    candidates: sessions de test
+    user: utilisateur
+    users: utilsateurs
+    prix:
+        eco: 99
+        business: 299
+        first: Nous contacter
+    nbTests:
+        eco: 5
+        business: 20
+        first: Sur mesure
+    exercices:
+        eco: Bibliothèque d'exercices complète
+        business: Bibliothèque d'exercices complète
+        first: Bibliothèque d'exercices complète et tests custom
+    languages:
+        eco: Plus de 3 langages
+        business: Plus de 3 langages
+        first: Plus de 3 langages
+    engagement:
+        eco: Résiliez à tout moment
+        business: Résiliez à tout moment
+        first: Sur mesure
+    subscribe:
+        trial: Commencez votre essai gratuit
+        contact: Nous contacter
+        currentPlan: Abonnement actuel
+    cancel:
+        title: Résiliation d'abonnement
+        btn: Résilier mon abonnement
+        content: Attention, votre abonnement sera directement inactivé et vous ne pourrez plus faire passer de tests.
+    widget:
+        label: souscrire
+        standard:
+            subscriptionName: Abonnement standard
+            panelLabel: Souscrire à l'abonnement standard
+        business:
+            subscriptionName: Abonnement business
+            panelLabel: Souscrire à l'abonnement business
+
+preLaunch:
+    title: Bienvenue sur Peerassess
+    content: Merci de vous être inscrit à notre service. Ce que vous voyez est la première version de l'outil; il est en cours de développement, et nous vous tiendrons informés de nos évolutions et du lancement officiel. <br>Si vous avez des besoins plus immédiats, nous pouvons tout de même vous aider, n'hésitez pas à
+    contact: nous contacter.

@@ -1,0 +1,27 @@
+site_candidate_evaluation-session_start:
+    pattern:  /{token}/start
+    defaults: { _controller: "site_candidate.controller.evaluation_session:startAction" }
+
+site_candidate_evaluation-session_test:
+    pattern:  /{token}
+    defaults: { _controller: "site_candidate.controller.evaluation_session:testAction" }
+
+site_candidate_evaluation-session_start_correction:
+    pattern:  /{token}/startCorrection
+    defaults: { _controller: "site_candidate.controller.evaluation_session:startCorrectionAction" }
+
+site_candidate_evaluation-session_correction:
+    pattern:  /{token}/correction
+    defaults: { _controller: "site_candidate.controller.evaluation_session:correctionAction" }
+
+site_candidate_evaluation-session_correction_one:
+    pattern:  /{token}/correction/{correctionId}
+    defaults: { _controller: "site_candidate.controller.evaluation_session:correctionOneAction" }
+
+site_candidate_evaluation-session_correction_one_file:
+    pattern:  /{token}/correction/{correctionId}/file
+    defaults: { _controller: "site_candidate.controller.evaluation_session:correctionOneFileAction" }
+
+site_candidate_evaluation-session_end:
+    pattern:  /{token}/end
+    defaults: { _controller: "site_candidate.controller.evaluation_session:endAction" }

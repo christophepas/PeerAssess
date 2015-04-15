@@ -1,0 +1,81 @@
+{% trans_default_domain 'SiteVitrineBundle' %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ 'layout.meta.description'|trans }}">
+  <meta name="author" content="">
+  <title>{% block title %}Peerassess{% endblock %}</title>
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
+  <link rel="icon" type="image/png" href="{{ optipng('favicon.png') }}" />
+</head>
+<body>
+
+  {% block content %}
+  {% endblock %}<!--/ content block -->
+
+
+  {% block footer %}
+  {% include "SiteVitrineBundle:Utils:footer.html.twig" %}
+  {% endblock %}
+
+  {% block javascripts %}
+  <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/waypoints.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.localScroll.min.js') }}"></script>
+  <script>
+  //initialisation de WayPoint : permet de déclancher des évènements au scroll
+    var $head = $( '#header' );
+    $( '.waypoint' ).each( function(i) {
+      var $el = $( this ),
+        animClassDown = $el.data( 'animateDown' ),
+        animClassUp = $el.data( 'animateUp' );
+
+      $el.waypoint( function( direction ) {
+        if( direction === 'down' && animClassDown ) {
+          $head.attr('class', 'header ' + animClassDown);
+        }
+        else if( direction === 'up' && animClassUp ){
+          $head.attr('class', 'header ' + animClassUp);
+        }
+      }, { offset: '-20px' } );
+    } );
+  </script>
+
+  <script type="text/javascript">
+  //initialisation du localscroll : permet un scroll doux
+  $( document ).ready(function() {
+    $.localScroll({
+        offset: { top: -60 } //offset correspondant à la hauteur du header
+    });
+  });
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51720346-1', 'peerassess.co');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+  $(".a-pulse").hover(
+    function () {
+    $(this).addClass("animated pulse");
+    },
+    function () {
+    $(this).removeClass("animated pulse");
+    }
+  );
+</script>
+  {% endblock javascripts %}
+
+</body>
+</html>

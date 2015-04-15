@@ -1,0 +1,48 @@
+{% extends 'SiteVitrineBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteVitrineBundle' %}
+
+{% block content %}
+{% include "SiteVitrineBundle:Utils:navbar.html.twig" %}
+	<div class="content" id="vitrine">
+		<section id="equipe"  class="full-page-white waypoint " data-animate-down="header-show" data-animate-up="header-hide">
+			<div class="bandeau-header"></div>
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-xs-10 col-sm-8 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-lg-offset-3 ">
+						<h1>{{ 'team.title'|trans }}</h1>
+					</div>
+					<div class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-1 membre">
+						<img src="{{ optipng('img/team/christophe.png') }}" class="img-circle" alt="Christophe Pasquier">
+						<h3>Christophe Pasquier</h3>
+						<div class="col-xs-12 col-centered">
+							<div class="social-btns">
+								<a href="http://fr.linkedin.com/pub/christophe-pasquier/56/759/938/en" target="blank" class="circle">
+									<span class="icon icon-linkedin a-pulse"></span>
+								</a>
+								<a href="https://twitter.com/ChristophePas" target="blank" class="circle">
+									<span class="icon icon-twitter a-pulse"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-0 membre">
+						<img src="{{ optipng('img/team/conrad.png') }}" class="img-circle" alt="Conrad Kleinepsel">
+						<h3>Conrad Kleinespel</h3>
+						<div class="col-xs-12 col-centered">
+							<div class="social-btns">
+								<a href="http://fr.linkedin.com/in/kleinespel/fr" target="blank" class="circle">
+									<span class="icon icon-linkedin a-pulse"></span>
+								</a>
+								<a href="https://twitter.com/kleinespel" target="blank" class="circle">
+									<span class="icon icon-twitter a-pulse"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+{% endblock %}

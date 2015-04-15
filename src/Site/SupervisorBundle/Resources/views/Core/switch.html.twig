@@ -1,0 +1,26 @@
+<div id="switch" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label_switch" aria-hidden="true">
+	<div class="modal-dialog">
+    <div class="modal-content">
+	    <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="label_switch">Se connecter en tant que...</h3>
+	    </div>
+	    {#
+	    {% if supervisors is not empty %}
+	    <div class="modal-body">
+		    <p>Sélectionnez un utilisateur</p>
+		    <select id="switch_selection">
+			  {% for supervisor in supervisors if supervisor.user != app.user %}
+				  <option value="{{ path('site_supervisor_core_homepage', {'_switch_user':supervisor.user.username}) }}">{{ supervisor.user }}</option>
+			  {% endfor %}
+		    </select>
+	    </div>
+	    <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">Annuler</button>
+		    <a class="btn btn-primary" href="{{ path('site_supervisor_core_homepage', {'_switch_user':supervisors[0].user.username}) }}" id="switch_anchor"><i class="icon-white icon-check"></i> Connexion</a>
+	    </div>
+	    {% endif %}
+	    #}
+	  </div>
+	</div>
+</div>

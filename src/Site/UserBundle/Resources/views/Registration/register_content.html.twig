@@ -1,0 +1,38 @@
+{% trans_default_domain 'SiteUserBundle' %}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+  {{ form_errors(form) }}
+  <div class="checkbox-button">
+  <i class="text-xs c-white">{{'form.youAre'|trans}}</i>
+
+
+  	{{ form_widget(form.type)}}
+  </div>
+  {{ form_errors(form.email) }}
+  {{ form_errors(form.plainPassword.first) }}
+  {{ form_errors(form.plainPassword.second) }}
+  {{ form_widget(form.email, {'attr': {'class': 'milieu','placeholder': 'form.email'|trans}}) }}
+  {{ form_widget(form.plainPassword.first, {'attr': {'class': 'milieu','placeholder':'form.password'|trans}}) }}
+  {{ form_widget(form.plainPassword.second, {'attr': {'class': 'milieu','placeholder':'form.password_confirmation'|trans}}) }}
+  {{ form_widget(form.submit, {'attr': {'class': 'btn-main-i full-width '}}) }}
+  {{ form_rest(form) }}
+</form>
+
+<div class="separation"></div>
+
+<a href="{{ path('hwi_oauth_service_redirect', {'service': 'github' }) }}" alt="Sign in with Github" class="btn btn-github full-width">
+  <span class="icon icon-github"></span>
+  &nbsp;&nbsp;
+  {{'form.github'|trans}}
+</a>
+
+<div class="m-t-lg">
+  <div>
+    <i class="text-xs c-white">
+    	<a href="{{ path('fos_user_security_login') }}" class="c-white">
+    		{{'form.alreadyRegistered'|trans}}
+	  		{{ 'form.signIn' |trans({},'SiteUserBundle')}}
+	  	</a>
+  	</i>
+  </div>
+</div>

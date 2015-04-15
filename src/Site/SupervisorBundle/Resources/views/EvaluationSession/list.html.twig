@@ -1,0 +1,38 @@
+{% extends 'SiteSupervisorBundle::layout.html.twig' %}
+{% trans_default_domain 'SiteSupervisorBundle' %}
+
+{% block id_content %}dashboard{% endblock %}
+{% block page_title %}{{ 'pageTitle.sessionList'|trans }}{% endblock %}
+
+{% block content %}
+<div class="active m-t" id="sessions">
+  <a href="{{ path('site_supervisor_evaluation-session_add-multiple') }}" class="btn btn-main">{{ 'common.newCandidate'|trans }}</a>
+  <table  class=" tablesorter table-dashboard m-t">
+    {% include 'SiteSupervisorBundle:EvaluationSession:table.html.twig' with {'invites': invites} %}
+  </table>
+  </div>
+</div>
+{% block modal2 %}
+	{% for invite in invites %}
+		{% include 'SiteSupervisorBundle:EvaluationSession:delete_invite_modal.html.twig' with{'invite':invite} %}
+	{% endfor %}
+{% endblock modal2 %}
+{% endblock content %}
+
+
+{% block tableSorter %}
+	<script type="text/javascript" src="{{ asset('js/jquery.tablesorter.js') }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function()
+      {
+        $(".tablesorter").tablesorter({
+          sortList: [[0,0]],
+          dateFormat: 'uk',
+          headers : {
+            5 : { sorter : false}
+          }
+        });
+      }
+    );
+  </script>
+{% endblock tableSorter%}

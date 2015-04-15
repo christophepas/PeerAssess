@@ -1,0 +1,79 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+{% extends 'SiteCandidateBundle::layout.html.twig' %}
+
+{% block page_title %}
+	Correction - {{ session.evaluation.test.name }} - {{ correction.id }}
+{% endblock %}
+
+{% block  id_content %}correction{% endblock %}
+
+{% block content %}
+
+	<div class="card">
+		{% set markingScheme = session.evaluation.test.markingScheme %}
+		<p>
+			{{ markingScheme.introduction|markdown }}
+			<a class="btn btn-main-s" href="{{ path('site_candidate_evaluation-session_correction_one_file', {
+				token: session.token,
+				correctionId: correction.id
+			}) }}">
+				{{ 'correction.ddlFile'|trans }}
+			</a>
+		</p>
+	</div>
+	<div class="container-fluid">
+		{{ form_start(form, {'attr': {'id': form.vars.id}}) }}
+			{% for section in markingScheme.sections %}
+			<h4 class="m-t-lg">{{ section.title }}</h4>
+			<p class="text-xs text-muted">{{ section.introduction }}</p>
+
+			{% for g in form.grades %}
+				{% if g.vars.data.markingSchemeGrade.markingSchemeSection.id == section.id %}
+				<div class="card">
+					<div class="grade">
+						<div class="row">
+							<label for="{{ g.score.vars.id }}" class="title col-xs-12 col-sm-6">
+								{{ g.vars.data.markingSchemeGrade.name }}
+							</label>
+							<div class="score col-xs-12 col-sm-6">
+								{% spaceless %}
+								{% for  child in g.children.score.children %}
+									{{form_widget(child)}}
+									{{form_label(child)}}
+								{% endfor %}
+								{% endspaceless %}
+							</div>
+							<div class="col-xs-12">
+								{{ form_widget(g.children.comment) }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+
+			{% endfor %}
+			<div class="card row">
+				<h4 class="m-t-lg">{{ 'correction.comment.title'|trans }}</h4>
+				<p class="text-xs text-muted">{{ 'correction.comment.text'|trans }}</p>
+				{{form_widget(form.comment)}}
+			</div>
+			<div class="row text-center m-t-lg m-b-lg">
+				{{ form_widget(form.save,{'attr': {'class': 'btn btn-main-s'}}) }}
+				{% do form.setRendered %}
+			</div>
+		{{ form_end(form) }}
+	</div>
+
+{% endblock content %}
+
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+	{% if correction.isFinished() %}
+	// Disable all buttons / inputs if the correction was already saved.
+	$('#{{ form.vars.id }} input, #{{ form.vars.id }} button').attr("disabled", true);
+	{% endif %}
+</script>
+{% endblock javascript %}

@@ -1,0 +1,33 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Admin dashboard - Peerassess{% endblock %}
+
+{% block page_title %}Admin dashboard{% endblock %}
+
+{% block sidebar %}
+<a id="menu-toggle" class="icon active" href="#">
+	<span class="icon icon-arrow-left8"></span>
+</a>
+<div id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<li class="logo">
+			<a href="{{path('peerassess_admin_homepage')}}"></a>
+		</li>
+	</ul>
+	<footer>
+		<br>{% include "SiteCoreBundle:Utils:switch_locale.html.twig" %}
+		<br>Peerassess 2014 <br>{{ 'footer.copyrights'|trans }}<br>{{ version }}
+	</footer>
+</div>
+{% endblock %}
+
+{% block container %}
+<div class="page-content container-fluid" id="{% block id_content %}{% endblock %}">
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% trans_default_domain 'SiteCandidateBundle' %}
+{% extends '::layout_mail.html.twig' %}
+
+{% block contenu_mail %}
+	{{'mail.late_start.greet'|trans}}
+	<br><br>
+	{{'mail.late_start.content'|trans({'%email%': invite.email}) }}
+{% endblock contenu_mail %}

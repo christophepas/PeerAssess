@@ -1,0 +1,27 @@
+marking_scheme_create:
+    path: /admin/test/{testId}/marking-scheme/create
+    defaults: { _controller: "SiteCoreBundle:MarkingScheme:markingSchemeCreate"}
+
+marking_scheme_edit:
+    path: /admin/marking-scheme/{markingSchemeId}/edit
+    defaults: { _controller: "SiteCoreBundle:MarkingScheme:markingSchemeEdit"}
+
+test_list:
+    path: /test/list
+    defaults: { _controller: SiteCoreBundle:Test:list }
+
+test_create:
+    path: /test/create
+    defaults: { _controller: SiteCoreBundle:Test:create }
+
+test_edit:
+    path: /test/{testId}/edit
+    defaults: { _controller: SiteCoreBundle:Test:edit }
+
+test_show:
+    path: /test/{testId}/show
+    defaults: { _controller: SiteCoreBundle:Test:show }
+
+test_file_download:
+    path: /test/{testId}/file
+    defaults: { _controller: SiteCoreBundle:Test:fileDownload }

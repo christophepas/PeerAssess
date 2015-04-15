@@ -1,0 +1,21 @@
+services:
+    twig.extension.language:
+        class: Site\CoreBundle\Twig\LanguageExtension
+        tags:
+            - { name: twig.extension }
+    twig.extension.markdown:
+        class: Site\CoreBundle\Twig\MarkdownExtension
+        tags:
+            - { name: twig.extension }
+    peerassess.bugsnag:
+        class: Bugsnag_Client
+        arguments: [%peerassess.bugsnag_api_key%]
+        calls:
+            - [setAutoNotify, [false]]
+            - [setReleaseStage, [%kernel.environment%]]
+            - [setNotifyReleaseStages, [['prod']]]
+    peerassess.exception_listener:
+        class: Site\CoreBundle\EventListener\ExceptionListener
+        arguments: ['@peerassess.bugsnag', '%kernel.environment%']
+        tags:
+            - { name: kernel.event_subscriber, priority: 0 }

@@ -1,0 +1,5 @@
+SiteCandidateBundle_core:
+    resource: "@SiteCandidateBundle/Resources/config/routing/core.yml"
+
+SiteCandidateBundle_evaluation_session:
+    resource: "@SiteCandidateBundle/Resources/config/routing/evaluation-session.yml"
