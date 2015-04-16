@@ -188,64 +188,6 @@ guide:
         title: Feedback
         content: Un onglet de feedback est disponible en permanence dans l’application.  Peerassess se développe en permanence et nous avons besoin de vos retours pour avancer.
         content2: Merci pour l’ensemble de vos commentaires, ils nous permettront de développer le produit qui réponde au mieux à vos besoins.
-company:
-    title: Changer d'abonnement
-    noImage: Aucune image
-    plan: Abonnement
-    credits: Tests restants
-    dateNextPlan: Prochaine date de facturation
-    nextPlan: Prochain abonnement
-    cancelPlan: Résilier mon abonnement
-    changePlan: Changer d'abonnement
-    changePicture: Changer l'image
-    subscriptions: Abonnement
-    subscriptionsLink: Changer d'offre
-subscribe:
-    changePlan: Changez ou résiliez votre abonnement à tout moment
-    perMonth: / mois
-    eco: Standard
-    business: Business
-    first: First
-    candidates: sessions de test
-    user: utilisateur
-    users: utilsateurs
-    prix:
-        eco: 99
-        business: 299
-        first: Nous contacter
-    nbTests:
-        eco: 5
-        business: 20
-        first: Sur mesure
-    exercices:
-        eco: Bibliothèque d'exercices complète
-        business: Bibliothèque d'exercices complète
-        first: Bibliothèque d'exercices complète et tests custom
-    languages:
-        eco: Plus de 3 langages
-        business: Plus de 3 langages
-        first: Plus de 3 langages
-    engagement:
-        eco: Résiliez à tout moment
-        business: Résiliez à tout moment
-        first: Sur mesure
-    subscribe:
-        trial: Commencez votre essai gratuit
-        contact: Nous contacter
-        currentPlan: Abonnement actuel
-    cancel:
-        title: Résiliation d'abonnement
-        btn: Résilier mon abonnement
-        content: Attention, votre abonnement sera directement inactivé et vous ne pourrez plus faire passer de tests.
-    widget:
-        label: souscrire
-        standard:
-            subscriptionName: Abonnement standard
-            panelLabel: Souscrire à l'abonnement standard
-        business:
-            subscriptionName: Abonnement business
-            panelLabel: Souscrire à l'abonnement business
-
 preLaunch:
     title: Bienvenue sur Peerassess
     content: Merci de vous être inscrit à notre service. Ce que vous voyez est la première version de l'outil; il est en cours de développement, et nous vous tiendrons informés de nos évolutions et du lancement officiel. <br>Si vous avez des besoins plus immédiats, nous pouvons tout de même vous aider, n'hésitez pas à

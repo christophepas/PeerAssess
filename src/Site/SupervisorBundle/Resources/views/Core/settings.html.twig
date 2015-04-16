@@ -23,34 +23,10 @@
         </div>
       {% block profile_content %}
         {{ render(controller('FOSUserBundle:Profile:show')) }}
-        {#
-        {{ render(controller('FOSUserBundle:Profile:edit')) }}
-        #}
         {{ render(controller('FOSUserBundle:ChangePassword:changePassword')) }}
       {% endblock profile_content %}
       </div>
     </div>
-    {#
-    <div class="col-xs-12 col-sm-6">
-      <div class="informations">
-        <div class="dropdown pull-right settings">
-          <div class="btn dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown">
-            <span class="icon icon-ellipsis"></span>
-          </div>
-          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu2">
-            <li role="presentation">
-              <a role="menuitem" tabindex="-1" href="#" id="edit-company"><span class="icon icon-image2"></span>{{ 'company.changePicture'|trans }}</a>
-            </li>
-            <li>
-              <a role="menuitem" tabindex="-1" href="{{path('site_supervisor_core_subscribe')}}"><span class="icon icon-credit"></span>{{ 'company.changePlan'|trans }}</a>
-            </li>
-          </ul>
-        </div>
-        {{ render(controller('SiteUserBundle:Company:show')) }}
-        {{ render(controller('SiteUserBundle:Company:edit')) }}
-      </div>
-    </div>
-    #}
   </div>
 {% endblock content %}
 

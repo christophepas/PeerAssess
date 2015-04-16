@@ -13,7 +13,8 @@
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
   border: 1px solid transparent;
-
+  padding-top: @header-navbar-padding-vertical;
+  padding-bottom: @header-navbar-padding-vertical;
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
 
@@ -403,7 +404,7 @@
       color: @navbar-default-link-color;
       font-weight: 400;
       font-size: @navbar-font-size;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       .transition(all 0.4s ease);
       &:hover{
         color: @navbar-default-link-hover-color;

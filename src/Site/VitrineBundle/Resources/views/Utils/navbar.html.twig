@@ -1,6 +1,6 @@
 {% trans_default_domain 'SiteVitrineBundle' %}
 
-<header id="header" class="header-hide" >
+<header id="header" class="header-hide">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,15 +19,15 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        {#
-        <ul class="nav navbar-nav navbar-center">
-          <li><a href="{{ path("site_vitrine_core_company") }}#presentation">{{ 'layout.menu.presentation'|trans }}</a></li>
-          <li><a href="{{ path("site_vitrine_core_company") }}#langages">{{ 'layout.menu.languages'|trans }}</a></li>
-          <li><a href="{{ path("site_vitrine_core_company") }}#features">{{ 'layout.menu.features'|trans }}</a></li>
-        </ul>
-        #}
-
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="{{ path("site_vitrine_core_company") }}#peerAssessment">{{ 'layout.menu.peerAssessment'|trans }}</a></li>
+          <li>
+          <li>
+            <a href="{{ path("site_vitrine_core_company") }}#presentation">{{ 'layout.menu.presentation'|trans }}</a></li>
+          <li>
+          <li>
+            <a href="{{ path("site_vitrine_core_company") }}#features">{{ 'layout.menu.features'|trans }}</a></li>
           <li>
             {% include "SiteCoreBundle:Utils:switch_locale.html.twig" %}
           </li>
@@ -55,7 +55,7 @@
           {% endif %}
         </ul>
 
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 </header>

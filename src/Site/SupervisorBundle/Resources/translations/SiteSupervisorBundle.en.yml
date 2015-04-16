@@ -189,64 +189,6 @@ guide:
         title: Feedback
         content: A feedback tab is available at anytime; Peerassess evolves permanently and we need your feedback to go on.
         content2: Thanks for all your comment. They allow us to candidateelop the perfect product to fulfill your needs.
-company:
-    title: Change of subscription
-    noImage: No picture
-    plan: plan
-    credits: Remaining tests
-    dateNextPlan: Next billing date
-    nextPlan: Next plan
-    cancelPlan: Unsubscribe
-    changePlan: Change your subscription
-    changePicture: Changer the picture
-    subscriptions: Plans
-    subscriptionsLink: Change your subscription
-subscribe:
-    changePlan: Change or unsubscribe at anytime
-    perMonth: / month
-    eco: Standard
-    business: Business
-    first: First
-    candidates: test sessions
-    user: user
-    users: users
-    prix:
-        eco: 99
-        business: 299
-        first: Contact us
-    nbTests:
-        eco: 5
-        business: 20
-        first: Custom
-    exercices:
-        eco: Full exercices library
-        business: Full exercices library
-        first: Full and custom exercices library
-    languages:
-        eco: More than 3 languages
-        business: More than 3 languages
-        first: More than 3 languages
-    engagement:
-        eco: Unsubscribe at anytime
-        business: Unsubscribe at anytime
-        first: Custom
-    subscribe:
-        trial: Start your free trial
-        contact: Contact us
-        currentPlan: Current subscription
-    cancel:
-        title: Subscription cancellation
-        btn: Subscription cancellation
-        content: Careful, your subscription will be directly canceled and you won't be able to use tests any longer.
-    widget:
-        label: subscribe
-        standard:
-            subscriptionName: Standard plan
-            panelLabel: Subscribe to the standard plan
-        business:
-            subscriptionName: Business plan
-            panelLabel: Subscribe to the business plan
-
 preLaunch:
     title: Welcome on Peerassess
     content: Thank you for subscribing to our service. What you see is a first version of the tool; it is currently under candidateelopment, and we will keep you informed of our evolutions and when it will officially launch. <br>If you have needs right now, we can still help you, feel free to

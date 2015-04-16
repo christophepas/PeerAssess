@@ -46,7 +46,7 @@
 @gray-ultra-light:	lighten(#000, 96%);
 @gray-blue-ultralight: #F6F7FA;
 
-@brand-info: #508FCB;//@vitrine-primary-light;
+@brand-info: #4E94C7;//@vitrine-primary-light;
 
 @brand-success:         #1ab667;//darken(saturate(#24c487,5%),3%);//lighten(#1DA55A,2%);
 @brand-success-light: desaturate(lighten(@brand-success,10%),20%);
@@ -67,7 +67,7 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @gray;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -85,7 +85,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          15px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 @font-size-xs:         ceil((@font-size-base * 0.8));
@@ -368,18 +368,19 @@
 
 //== Navbar
 @navbar-font-size : 13px;
-@navbar-height:                    60px;
-@header-navbar-padding-vertical : 15px;
+@navbar-height:                    50px;
+@header-navbar-padding-vertical : 10px;
 @header-navbar-margin-vertical : (@navbar-height - @line-height-computed)/2 - @header-navbar-padding-vertical;
 
-@header-navbar-brand-padding-top: 7px;
-@header-navbar-brand-padding-bottom: 11px;
+@header-navbar-brand-padding-top: 5px;
+@header-navbar-brand-padding-bottom: 5px;
 
-@header-navbar-right-margin-vertical: 10px;
+@header-navbar-right-margin-vertical: 0px;
+@header-navbar-right-padding-vertical: 10px;
 
 @header-brand-navbar-margin-vertical : 0px;//(@navbar-height - 3*@line-height-computed)/2 - @header-navbar-padding-vertical;
 
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             0px;//@line-height-computed;
 @navbar-border-radius:             0px;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);

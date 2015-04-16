@@ -9,6 +9,7 @@ layout:
         description: Peerassess is the first peer assessment tool, making the candidates work on real project and grade each other.
     menu:
         home: Home
+        peerAssessment: Peer assessment
         presentation: Presentation
         features: Features
         appAccess: Application
@@ -19,7 +20,6 @@ layout:
         team: About us
         contact: Contact
         email: email
-        subscribe: Subscribe
         legal2: Peerassess 2015
         changeLanguage: Version française
 company:
@@ -36,6 +36,17 @@ company:
         reset:
             sentTitle: New password
             sentMessage: Your new password is registered and ready to use
+    peerAssessment:
+        title: How does the peer assessment work ?
+        step1:
+            title: 1. Work
+            content: The candidates work on a project, in their condition and in a peaceful environement.
+        step2:
+            title: 2. Correction
+            content: Each work is corrected by 3 other candidates on a given marking scheme.
+        step3:
+            title: 3. Result
+            content: The supervisor obtains a score, along with the details of the corrections. Each candidate get feedbacks from others to improve.
     presentation:
         avantage1:
             title: <span class="insist">Real conditions</span> assessments.
