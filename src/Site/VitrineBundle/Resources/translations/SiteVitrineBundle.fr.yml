@@ -24,7 +24,7 @@ layout:
         changeLanguage: English version
 company:
     home:
-        punchline: Découvrez le <span class="insist">un outil d'évaluation exceptionnel</span>
+        punchline: Découvrez <span class="insist">un outil d'évaluation exceptionnel</span>
         subPunchline: PeerAssess est la première plateforme de peer assessment. Elle est aussi open-source et gratuite. 
         alreadyConnected: Vous êtes déjà connecté
         askAccess: Demande d'accès
