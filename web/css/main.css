@@ -459,7 +459,7 @@
 .table-style td,
 .table-style th {
   padding: 15px;
-  font-family: Lato, "Source Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato, "Source Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .table-style tr .empty {
   color: #999999;
@@ -1556,6 +1556,30 @@ table .no-line td {
 .tablesorter th.disabledSorter {
   background-image: none;
 }
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato/Lato-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato/Lato-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
 #vitrine h1,
 #vitrine h2,
 #vitrine h3,
@@ -1568,7 +1592,7 @@ table .no-line td {
 #vitrine .h4,
 #vitrine .h5,
 #vitrine .h6 {
-  font-family: "PT Sans", "Open Sans", Lato, "Open Sans", "Source Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "PT Sans", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .no-bg {
   background-color: transparent !important;
@@ -3839,7 +3863,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Lato, "Source Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato, "Source Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #555555;
@@ -11014,24 +11038,6 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
-}
-@font-face {
-  font-family: 'Source Sans';
-  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Source Sans';
-  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Source Sans';
-  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
 }
 .checkbox-style-1 {
   /* on checked */
