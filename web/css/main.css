@@ -829,7 +829,7 @@ table .no-line td {
 .sidebar-nav .logo {
   height: 40px;
   margin: 10px 22px;
-  background: url('../img/logo/logo-small-bluebg.png') no-repeat;
+  background: url('../img/logo/logo-bluebg-small.png') no-repeat;
   background-size: auto 40px;
 }
 .sidebar-nav .logo a {
