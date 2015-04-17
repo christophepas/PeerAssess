@@ -1700,11 +1700,32 @@ table .no-line td {
   color: white!important;
 }
 @media (max-width: 768px) {
+  .color-section {
+    padding-top: 20px;
+  }
   .color-section.img-to-left .presentation-item {
-    padding-left: 53%;
+    padding: 10px;
+    height: auto;
+  }
+  .color-section.img-to-left img {
+    right: inherit;
+    top: inherit;
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    position: inherit;
   }
   .color-section.img-to-right .presentation-item {
-    padding-right: 53%;
+    padding: 10px;
+    height: auto;
+  }
+  .color-section.img-to-right img {
+    left: inherit;
+    bottom: inherit;
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    position: inherit;
   }
 }
 .bande {
@@ -6276,6 +6297,27 @@ input[type="button"].btn-block {
 .btn-github.btn-lg {
   font-size: 15px;
   padding: 20px 35px !important;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
 }
 @font-face {
   font-family: 'Glyphicons Halflings';

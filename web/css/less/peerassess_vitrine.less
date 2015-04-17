@@ -127,15 +127,36 @@
 }
 @media (max-width: @screen-sm-min) {
   .color-section{
-      &.img-to-left{
+    padding-top: 20px;
+    &.img-to-left{
       .presentation-item{
-        padding-left: 53%;
+        padding: 10px;
+        height: auto;
+      }
+      img{
+        position: inherit;
+        right: inherit;
+        top: inherit;
+        width: 80%;
+        margin-left: 10%;
+        height: auto;
+        position: inherit;
       }
     }
-      &.img-to-right{
+    &.img-to-right{
       .presentation-item{
-        padding-right: 53%;
+        padding: 10px;
+        height: auto;
       }
+      img{
+        position: inherit;
+        left: inherit;
+        bottom: inherit;
+        width: 80%;
+        margin-left: 10%;
+        height: auto;
+        position: inherit;
+      }   
     }
   }
 }
