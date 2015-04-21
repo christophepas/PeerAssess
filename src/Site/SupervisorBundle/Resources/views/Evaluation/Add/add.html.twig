@@ -6,51 +6,57 @@
 {% block id_content %}testCreation{% endblock %}
 
 {% block content %}
-	{# Selection du language #}
-<form name="site_supervisorbundle_evaluation" method="post" action="" {{ form_enctype(form) }}>
-	{{ form_widget(form._token) }}
-	<section id="choixLanguage" class="informations">
-		<div class="titre">
-			1. {{ 'evaluation.add.language.title'|trans }}
-		</div>
-		<div class="content">
-			{% for language in languages %}
-				{% set notEmpty = 0 %}
-				{% for test in tests if test.language |language == language %}
-					{% set notEmpty = 1 %}
+{% if tests is empty %}
+	<a href="{{ path('test_create') }}" class="btn btn-main">
+		First create a new test subject
+	</a>
+{% else %}
+	<form name="site_supervisorbundle_evaluation" method="post" action="" {{ form_enctype(form) }}>
+		{{ form_widget(form._token) }}
+		{# Selection du language #}
+		<section id="choixLanguage" class="informations">
+			<div class="titre">
+				1. {{ 'evaluation.add.language.title'|trans }}
+			</div>
+			<div class="content">
+				{% for language in languages %}
+					{% set notEmpty = 0 %}
+					{% for test in tests if test.language |language == language %}
+						{% set notEmpty = 1 %}
+					{% endfor %}
+					{% if notEmpty == 1 %}
+						<div class="btn">{{ language }}</div>
+					{% endif %}
 				{% endfor %}
-				{% if notEmpty == 1 %}
-					<div class="btn">{{ language }}</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-	</section>
-	{# Selection de l'évaluation, détails #}
-	<section id="choixTest" class="informations m-t container-fluid" style="display:none;">
-		<div class="titre">
-			2. {{ 'evaluation.add.test.title'|trans }}
-		</div>
-		<div class="content row" id="site_supervisorbundle_evaluation_test">
-			{% for test in tests %}
-				<input type="radio" id="site_supervisorbundle_evaluation_test_{{ test.id }}" name="site_supervisorbundle_evaluation[test]" required="required" value="{{ test.id }}">
-				<label for="site_supervisorbundle_evaluation_test_{{ test.id }}" class="required test {{test.language |language|replace({' ': ''})}} col-xs-6 col-sm-4 col-md-3" id="{{test.id}}">
-					<div class="test-content">
-						<div class="nom">{{ test.name }}</div>
-						<div class="text">{{test.shortDescription}}</div>
-					</div>
-				</label>
-			{% endfor %}
-		</div>
-	</section>
-	{# Selection du nom et sauvegarde #}
-	<section id="choixNom" class="informations m-t" style="display:none;">
-		<div class="titre">
-			3. {{ 'evaluation.add.name.title'|trans }}
-		</div>
-		<input type="text" id="site_supervisorbundle_evaluation_name" name="site_supervisorbundle_evaluation[name]" required="required" placeholder="Nom du Sujet" class="evaluationTitle input-main">
-		<button type="submit" id="site_supervisorbundle_evaluation_save" name="site_supervisorbundle_evaluation[save]" class="btn btn-main-s ">{{ 'evaluation.add.generate'|trans }}</button>
-	</section>
-</form>
+			</div>
+		</section>
+		{# Selection de l'évaluation, détails #}
+		<section id="choixTest" class="informations m-t container-fluid" style="display:none;">
+			<div class="titre">
+				2. {{ 'evaluation.add.test.title'|trans }}
+			</div>
+			<div class="content row" id="site_supervisorbundle_evaluation_test">
+				{% for test in tests %}
+					<input type="radio" id="site_supervisorbundle_evaluation_test_{{ test.id }}" name="site_supervisorbundle_evaluation[test]" required="required" value="{{ test.id }}">
+					<label for="site_supervisorbundle_evaluation_test_{{ test.id }}" class="required test {{test.language |language|replace({' ': ''})}} col-xs-6 col-sm-4 col-md-3" id="{{test.id}}">
+						<div class="test-content">
+							<div class="nom">{{ test.name }}</div>
+							<div class="text">{{test.shortDescription}}</div>
+						</div>
+					</label>
+				{% endfor %}
+			</div>
+		</section>
+		{# Selection du nom et sauvegarde #}
+		<section id="choixNom" class="informations m-t" style="display:none;">
+			<div class="titre">
+				3. {{ 'evaluation.add.name.title'|trans }}
+			</div>
+			<input type="text" id="site_supervisorbundle_evaluation_name" name="site_supervisorbundle_evaluation[name]" required="required" placeholder="Nom du Sujet" class="evaluationTitle input-main">
+			<button type="submit" id="site_supervisorbundle_evaluation_save" name="site_supervisorbundle_evaluation[save]" class="btn btn-main-s ">{{ 'evaluation.add.generate'|trans }}</button>
+		</section>
+	</form>
+{% endif %}
 {% endblock content %}
 
 {% block javascript %}

@@ -26,7 +26,6 @@ class MarkingSchemeController extends BaseController
         if ($res instanceof Response) {
             return $res;
         }
-
         return $this->render('SiteCoreBundle:MarkingScheme:markingSchemeCreate.html.twig', array(
             'form' => $form->createView()
         ));
@@ -44,7 +43,6 @@ class MarkingSchemeController extends BaseController
         if ($res instanceof Response) {
             return $res;
         }
-
         return $this->render('SiteCoreBundle:MarkingScheme:markingSchemeCreate.html.twig', array(
             'form' => $form->createView()
         ));
@@ -62,9 +60,7 @@ class MarkingSchemeController extends BaseController
                 $markingScheme = $em->getRepository('PeerassessCoreBundle:MarkingScheme')
                     ->findOneById($markingScheme->getId());
 
-                return $this->redirect($this->generateUrl('marking_scheme_edit', array(
-                    'markingSchemeId' => $markingScheme->getId()
-                )));
+                return $this->redirect($this->generateUrl('site_supervisor_evaluation_add'));
             }
         }
     }

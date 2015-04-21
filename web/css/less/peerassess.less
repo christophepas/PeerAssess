@@ -317,6 +317,13 @@
   }
   .checkbox-button{
     width: 100%;
+    input[type=radio] {
+      display: block;
+      opacity: 0;//pas de display none, permet d'avoir la validation
+      height: 1px;
+      width: 1px;
+      position: absolute;
+    }    
     label{
       font-size: @font-size-xs;
       line-height: @font-size-xs * 1.8;

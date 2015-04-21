@@ -17,6 +17,7 @@ class Languages
     const JAVA = 10;
     const OBJECTIVEC = 11;
     const SWIFT = 12;
+    const OTHER = 13;
 
     public static function getLanguage ($language)
     {
@@ -39,6 +40,7 @@ class Languages
             self::JAVA => "Java",
             self::OBJECTIVEC => "Objective C",
             self::SWIFT => "Swift",
+            self::OTHER => "Other",
         );
     }
 
@@ -63,6 +65,7 @@ class Languages
                 "Java" => self::JAVA,
                 "Objective C" => self::OBJECTIVEC,
                 "Swift" => self::SWIFT,
+                "Other" => self::OTHER,
         );
     }
 }
