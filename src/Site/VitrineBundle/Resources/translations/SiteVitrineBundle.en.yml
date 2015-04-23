@@ -25,7 +25,7 @@ layout:
 company:
     home:
         punchline: Discover an <span class="insist">amazing assessment tool</span>
-        subPunchline: PeerAssess is the first peer assessment platform. It's also free and open-source.
+        subPunchline: PeerAssess is the first peer assessment platform. It's also currently free.
         alreadyConnected: You are already connected
         askAccess: Request access
         passForgot: Forgot your password?
