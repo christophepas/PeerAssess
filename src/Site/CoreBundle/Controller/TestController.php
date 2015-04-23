@@ -21,7 +21,7 @@ class TestController extends BaseController
         $em = $this->getDoctrine()->getManager();
         $tests = $em->getRepository('PeerassessCoreBundle:Test')->findAll();
         return $this->render(
-            'SiteCoreBundle:test:list.html.twig',
+            'SiteCoreBundle:Test:list.html.twig',
             array(
                 'tests' => $tests
             )
